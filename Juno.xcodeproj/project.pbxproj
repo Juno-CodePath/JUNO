@@ -7,66 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7AC95040243C106A0042C2FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC9503F243C106A0042C2FA /* AppDelegate.swift */; };
-		7AC95042243C106A0042C2FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC95041243C106A0042C2FA /* SceneDelegate.swift */; };
-		7AC95044243C106A0042C2FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC95043243C106A0042C2FA /* ContentView.swift */; };
-		7AC95046243C106E0042C2FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC95045243C106E0042C2FA /* Assets.xcassets */; };
-		7AC95049243C106E0042C2FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC95048243C106E0042C2FA /* Preview Assets.xcassets */; };
-		7AC9504C243C106E0042C2FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AC9504A243C106E0042C2FA /* LaunchScreen.storyboard */; };
-		7AC95057243C106E0042C2FA /* JunoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC95056243C106E0042C2FA /* JunoTests.swift */; };
-		7AC95062243C106E0042C2FA /* JunoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC95061243C106E0042C2FA /* JunoUITests.swift */; };
+		1428F8D5243D1C64005F42ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1428F8D4243D1C64005F42ED /* AppDelegate.swift */; };
+		1428F8D7243D1C64005F42ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1428F8D6243D1C64005F42ED /* SceneDelegate.swift */; };
+		1428F8D9243D1C64005F42ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1428F8D8243D1C64005F42ED /* ViewController.swift */; };
+		1428F8DC243D1C64005F42ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1428F8DA243D1C64005F42ED /* Main.storyboard */; };
+		1428F8DE243D1C66005F42ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1428F8DD243D1C66005F42ED /* Assets.xcassets */; };
+		1428F8E1243D1C66005F42ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1428F8DF243D1C66005F42ED /* LaunchScreen.storyboard */; };
+		1428F8EC243D1C66005F42ED /* JunoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1428F8EB243D1C66005F42ED /* JunoTests.swift */; };
+		1428F8F7243D1C66005F42ED /* JunoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1428F8F6243D1C66005F42ED /* JunoUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7AC95053243C106E0042C2FA /* PBXContainerItemProxy */ = {
+		1428F8E8243D1C66005F42ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7AC95034243C106A0042C2FA /* Project object */;
+			containerPortal = 1428F8C9243D1C64005F42ED /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7AC9503B243C106A0042C2FA;
+			remoteGlobalIDString = 1428F8D0243D1C64005F42ED;
 			remoteInfo = Juno;
 		};
-		7AC9505E243C106E0042C2FA /* PBXContainerItemProxy */ = {
+		1428F8F3243D1C66005F42ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7AC95034243C106A0042C2FA /* Project object */;
+			containerPortal = 1428F8C9243D1C64005F42ED /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7AC9503B243C106A0042C2FA;
+			remoteGlobalIDString = 1428F8D0243D1C64005F42ED;
 			remoteInfo = Juno;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7AC9503C243C106A0042C2FA /* Juno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Juno.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7AC9503F243C106A0042C2FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7AC95041243C106A0042C2FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7AC95043243C106A0042C2FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		7AC95045243C106E0042C2FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7AC95048243C106E0042C2FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		7AC9504B243C106E0042C2FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7AC9504D243C106E0042C2FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7AC95052243C106E0042C2FA /* JunoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JunoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7AC95056243C106E0042C2FA /* JunoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JunoTests.swift; sourceTree = "<group>"; };
-		7AC95058243C106E0042C2FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7AC9505D243C106E0042C2FA /* JunoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JunoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7AC95061243C106E0042C2FA /* JunoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JunoUITests.swift; sourceTree = "<group>"; };
-		7AC95063243C106E0042C2FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1428F8D1243D1C64005F42ED /* Juno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Juno.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1428F8D4243D1C64005F42ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1428F8D6243D1C64005F42ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1428F8D8243D1C64005F42ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1428F8DB243D1C64005F42ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1428F8DD243D1C66005F42ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1428F8E0243D1C66005F42ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1428F8E2243D1C66005F42ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1428F8E7243D1C66005F42ED /* JunoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JunoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1428F8EB243D1C66005F42ED /* JunoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JunoTests.swift; sourceTree = "<group>"; };
+		1428F8ED243D1C66005F42ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1428F8F2243D1C66005F42ED /* JunoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JunoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1428F8F6243D1C66005F42ED /* JunoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JunoUITests.swift; sourceTree = "<group>"; };
+		1428F8F8243D1C66005F42ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7AC95039243C106A0042C2FA /* Frameworks */ = {
+		1428F8CE243D1C64005F42ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7AC9504F243C106E0042C2FA /* Frameworks */ = {
+		1428F8E4243D1C66005F42ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7AC9505A243C106E0042C2FA /* Frameworks */ = {
+		1428F8EF243D1C66005F42ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -76,62 +76,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7AC95033243C106A0042C2FA = {
+		1428F8C8243D1C64005F42ED = {
 			isa = PBXGroup;
 			children = (
-				7AC9503E243C106A0042C2FA /* Juno */,
-				7AC95055243C106E0042C2FA /* JunoTests */,
-				7AC95060243C106E0042C2FA /* JunoUITests */,
-				7AC9503D243C106A0042C2FA /* Products */,
+				1428F8D3243D1C64005F42ED /* Juno */,
+				1428F8EA243D1C66005F42ED /* JunoTests */,
+				1428F8F5243D1C66005F42ED /* JunoUITests */,
+				1428F8D2243D1C64005F42ED /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		7AC9503D243C106A0042C2FA /* Products */ = {
+		1428F8D2243D1C64005F42ED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7AC9503C243C106A0042C2FA /* Juno.app */,
-				7AC95052243C106E0042C2FA /* JunoTests.xctest */,
-				7AC9505D243C106E0042C2FA /* JunoUITests.xctest */,
+				1428F8D1243D1C64005F42ED /* Juno.app */,
+				1428F8E7243D1C66005F42ED /* JunoTests.xctest */,
+				1428F8F2243D1C66005F42ED /* JunoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7AC9503E243C106A0042C2FA /* Juno */ = {
+		1428F8D3243D1C64005F42ED /* Juno */ = {
 			isa = PBXGroup;
 			children = (
-				7AC9503F243C106A0042C2FA /* AppDelegate.swift */,
-				7AC95041243C106A0042C2FA /* SceneDelegate.swift */,
-				7AC95043243C106A0042C2FA /* ContentView.swift */,
-				7AC95045243C106E0042C2FA /* Assets.xcassets */,
-				7AC9504A243C106E0042C2FA /* LaunchScreen.storyboard */,
-				7AC9504D243C106E0042C2FA /* Info.plist */,
-				7AC95047243C106E0042C2FA /* Preview Content */,
+				1428F8D4243D1C64005F42ED /* AppDelegate.swift */,
+				1428F8D6243D1C64005F42ED /* SceneDelegate.swift */,
+				1428F8D8243D1C64005F42ED /* ViewController.swift */,
+				1428F8DA243D1C64005F42ED /* Main.storyboard */,
+				1428F8DD243D1C66005F42ED /* Assets.xcassets */,
+				1428F8DF243D1C66005F42ED /* LaunchScreen.storyboard */,
+				1428F8E2243D1C66005F42ED /* Info.plist */,
 			);
 			path = Juno;
 			sourceTree = "<group>";
 		};
-		7AC95047243C106E0042C2FA /* Preview Content */ = {
+		1428F8EA243D1C66005F42ED /* JunoTests */ = {
 			isa = PBXGroup;
 			children = (
-				7AC95048243C106E0042C2FA /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		7AC95055243C106E0042C2FA /* JunoTests */ = {
-			isa = PBXGroup;
-			children = (
-				7AC95056243C106E0042C2FA /* JunoTests.swift */,
-				7AC95058243C106E0042C2FA /* Info.plist */,
+				1428F8EB243D1C66005F42ED /* JunoTests.swift */,
+				1428F8ED243D1C66005F42ED /* Info.plist */,
 			);
 			path = JunoTests;
 			sourceTree = "<group>";
 		};
-		7AC95060243C106E0042C2FA /* JunoUITests */ = {
+		1428F8F5243D1C66005F42ED /* JunoUITests */ = {
 			isa = PBXGroup;
 			children = (
-				7AC95061243C106E0042C2FA /* JunoUITests.swift */,
-				7AC95063243C106E0042C2FA /* Info.plist */,
+				1428F8F6243D1C66005F42ED /* JunoUITests.swift */,
+				1428F8F8243D1C66005F42ED /* Info.plist */,
 			);
 			path = JunoUITests;
 			sourceTree = "<group>";
@@ -139,13 +131,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7AC9503B243C106A0042C2FA /* Juno */ = {
+		1428F8D0243D1C64005F42ED /* Juno */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7AC95066243C106E0042C2FA /* Build configuration list for PBXNativeTarget "Juno" */;
+			buildConfigurationList = 1428F8FB243D1C66005F42ED /* Build configuration list for PBXNativeTarget "Juno" */;
 			buildPhases = (
-				7AC95038243C106A0042C2FA /* Sources */,
-				7AC95039243C106A0042C2FA /* Frameworks */,
-				7AC9503A243C106A0042C2FA /* Resources */,
+				1428F8CD243D1C64005F42ED /* Sources */,
+				1428F8CE243D1C64005F42ED /* Frameworks */,
+				1428F8CF243D1C64005F42ED /* Resources */,
 			);
 			buildRules = (
 			);
@@ -153,69 +145,69 @@
 			);
 			name = Juno;
 			productName = Juno;
-			productReference = 7AC9503C243C106A0042C2FA /* Juno.app */;
+			productReference = 1428F8D1243D1C64005F42ED /* Juno.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7AC95051243C106E0042C2FA /* JunoTests */ = {
+		1428F8E6243D1C66005F42ED /* JunoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7AC95069243C106E0042C2FA /* Build configuration list for PBXNativeTarget "JunoTests" */;
+			buildConfigurationList = 1428F8FE243D1C66005F42ED /* Build configuration list for PBXNativeTarget "JunoTests" */;
 			buildPhases = (
-				7AC9504E243C106E0042C2FA /* Sources */,
-				7AC9504F243C106E0042C2FA /* Frameworks */,
-				7AC95050243C106E0042C2FA /* Resources */,
+				1428F8E3243D1C66005F42ED /* Sources */,
+				1428F8E4243D1C66005F42ED /* Frameworks */,
+				1428F8E5243D1C66005F42ED /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7AC95054243C106E0042C2FA /* PBXTargetDependency */,
+				1428F8E9243D1C66005F42ED /* PBXTargetDependency */,
 			);
 			name = JunoTests;
 			productName = JunoTests;
-			productReference = 7AC95052243C106E0042C2FA /* JunoTests.xctest */;
+			productReference = 1428F8E7243D1C66005F42ED /* JunoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		7AC9505C243C106E0042C2FA /* JunoUITests */ = {
+		1428F8F1243D1C66005F42ED /* JunoUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7AC9506C243C106E0042C2FA /* Build configuration list for PBXNativeTarget "JunoUITests" */;
+			buildConfigurationList = 1428F901243D1C66005F42ED /* Build configuration list for PBXNativeTarget "JunoUITests" */;
 			buildPhases = (
-				7AC95059243C106E0042C2FA /* Sources */,
-				7AC9505A243C106E0042C2FA /* Frameworks */,
-				7AC9505B243C106E0042C2FA /* Resources */,
+				1428F8EE243D1C66005F42ED /* Sources */,
+				1428F8EF243D1C66005F42ED /* Frameworks */,
+				1428F8F0243D1C66005F42ED /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7AC9505F243C106E0042C2FA /* PBXTargetDependency */,
+				1428F8F4243D1C66005F42ED /* PBXTargetDependency */,
 			);
 			name = JunoUITests;
 			productName = JunoUITests;
-			productReference = 7AC9505D243C106E0042C2FA /* JunoUITests.xctest */;
+			productReference = 1428F8F2243D1C66005F42ED /* JunoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		7AC95034243C106A0042C2FA /* Project object */ = {
+		1428F8C9243D1C64005F42ED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1140;
-				ORGANIZATIONNAME = "Nobel Gebru";
+				ORGANIZATIONNAME = "Juno-Codepath";
 				TargetAttributes = {
-					7AC9503B243C106A0042C2FA = {
+					1428F8D0243D1C64005F42ED = {
 						CreatedOnToolsVersion = 11.4;
 					};
-					7AC95051243C106E0042C2FA = {
+					1428F8E6243D1C66005F42ED = {
 						CreatedOnToolsVersion = 11.4;
-						TestTargetID = 7AC9503B243C106A0042C2FA;
+						TestTargetID = 1428F8D0243D1C64005F42ED;
 					};
-					7AC9505C243C106E0042C2FA = {
+					1428F8F1243D1C66005F42ED = {
 						CreatedOnToolsVersion = 11.4;
-						TestTargetID = 7AC9503B243C106A0042C2FA;
+						TestTargetID = 1428F8D0243D1C64005F42ED;
 					};
 				};
 			};
-			buildConfigurationList = 7AC95037243C106A0042C2FA /* Build configuration list for PBXProject "Juno" */;
+			buildConfigurationList = 1428F8CC243D1C64005F42ED /* Build configuration list for PBXProject "Juno" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -223,37 +215,37 @@
 				en,
 				Base,
 			);
-			mainGroup = 7AC95033243C106A0042C2FA;
-			productRefGroup = 7AC9503D243C106A0042C2FA /* Products */;
+			mainGroup = 1428F8C8243D1C64005F42ED;
+			productRefGroup = 1428F8D2243D1C64005F42ED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7AC9503B243C106A0042C2FA /* Juno */,
-				7AC95051243C106E0042C2FA /* JunoTests */,
-				7AC9505C243C106E0042C2FA /* JunoUITests */,
+				1428F8D0243D1C64005F42ED /* Juno */,
+				1428F8E6243D1C66005F42ED /* JunoTests */,
+				1428F8F1243D1C66005F42ED /* JunoUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7AC9503A243C106A0042C2FA /* Resources */ = {
+		1428F8CF243D1C64005F42ED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AC9504C243C106E0042C2FA /* LaunchScreen.storyboard in Resources */,
-				7AC95049243C106E0042C2FA /* Preview Assets.xcassets in Resources */,
-				7AC95046243C106E0042C2FA /* Assets.xcassets in Resources */,
+				1428F8E1243D1C66005F42ED /* LaunchScreen.storyboard in Resources */,
+				1428F8DE243D1C66005F42ED /* Assets.xcassets in Resources */,
+				1428F8DC243D1C64005F42ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7AC95050243C106E0042C2FA /* Resources */ = {
+		1428F8E5243D1C66005F42ED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7AC9505B243C106E0042C2FA /* Resources */ = {
+		1428F8F0243D1C66005F42ED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -263,52 +255,60 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7AC95038243C106A0042C2FA /* Sources */ = {
+		1428F8CD243D1C64005F42ED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AC95040243C106A0042C2FA /* AppDelegate.swift in Sources */,
-				7AC95042243C106A0042C2FA /* SceneDelegate.swift in Sources */,
-				7AC95044243C106A0042C2FA /* ContentView.swift in Sources */,
+				1428F8D9243D1C64005F42ED /* ViewController.swift in Sources */,
+				1428F8D5243D1C64005F42ED /* AppDelegate.swift in Sources */,
+				1428F8D7243D1C64005F42ED /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7AC9504E243C106E0042C2FA /* Sources */ = {
+		1428F8E3243D1C66005F42ED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AC95057243C106E0042C2FA /* JunoTests.swift in Sources */,
+				1428F8EC243D1C66005F42ED /* JunoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7AC95059243C106E0042C2FA /* Sources */ = {
+		1428F8EE243D1C66005F42ED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AC95062243C106E0042C2FA /* JunoUITests.swift in Sources */,
+				1428F8F7243D1C66005F42ED /* JunoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7AC95054243C106E0042C2FA /* PBXTargetDependency */ = {
+		1428F8E9243D1C66005F42ED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7AC9503B243C106A0042C2FA /* Juno */;
-			targetProxy = 7AC95053243C106E0042C2FA /* PBXContainerItemProxy */;
+			target = 1428F8D0243D1C64005F42ED /* Juno */;
+			targetProxy = 1428F8E8243D1C66005F42ED /* PBXContainerItemProxy */;
 		};
-		7AC9505F243C106E0042C2FA /* PBXTargetDependency */ = {
+		1428F8F4243D1C66005F42ED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7AC9503B243C106A0042C2FA /* Juno */;
-			targetProxy = 7AC9505E243C106E0042C2FA /* PBXContainerItemProxy */;
+			target = 1428F8D0243D1C64005F42ED /* Juno */;
+			targetProxy = 1428F8F3243D1C66005F42ED /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7AC9504A243C106E0042C2FA /* LaunchScreen.storyboard */ = {
+		1428F8DA243D1C64005F42ED /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7AC9504B243C106E0042C2FA /* Base */,
+				1428F8DB243D1C64005F42ED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1428F8DF243D1C66005F42ED /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1428F8E0243D1C66005F42ED /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -316,7 +316,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		7AC95064243C106E0042C2FA /* Debug */ = {
+		1428F8F9243D1C66005F42ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -376,7 +376,7 @@
 			};
 			name = Debug;
 		};
-		7AC95065243C106E0042C2FA /* Release */ = {
+		1428F8FA243D1C66005F42ED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -430,45 +430,41 @@
 			};
 			name = Release;
 		};
-		7AC95067243C106E0042C2FA /* Debug */ = {
+		1428F8FC243D1C66005F42ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Juno/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Juno/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Nobel.Juno;
+				PRODUCT_BUNDLE_IDENTIFIER = com.juno.Juno;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		7AC95068243C106E0042C2FA /* Release */ = {
+		1428F8FD243D1C66005F42ED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Juno/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Juno/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Nobel.Juno;
+				PRODUCT_BUNDLE_IDENTIFIER = com.juno.Juno;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		7AC9506A243C106E0042C2FA /* Debug */ = {
+		1428F8FF243D1C66005F42ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -481,7 +477,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Nobel.JunoTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.juno.JunoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -489,7 +485,7 @@
 			};
 			name = Debug;
 		};
-		7AC9506B243C106E0042C2FA /* Release */ = {
+		1428F900243D1C66005F42ED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -502,7 +498,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Nobel.JunoTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.juno.JunoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -510,7 +506,7 @@
 			};
 			name = Release;
 		};
-		7AC9506D243C106E0042C2FA /* Debug */ = {
+		1428F902243D1C66005F42ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -521,7 +517,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Nobel.JunoUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.juno.JunoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -529,7 +525,7 @@
 			};
 			name = Debug;
 		};
-		7AC9506E243C106E0042C2FA /* Release */ = {
+		1428F903243D1C66005F42ED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -540,7 +536,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Nobel.JunoUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.juno.JunoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -551,43 +547,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7AC95037243C106A0042C2FA /* Build configuration list for PBXProject "Juno" */ = {
+		1428F8CC243D1C64005F42ED /* Build configuration list for PBXProject "Juno" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7AC95064243C106E0042C2FA /* Debug */,
-				7AC95065243C106E0042C2FA /* Release */,
+				1428F8F9243D1C66005F42ED /* Debug */,
+				1428F8FA243D1C66005F42ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7AC95066243C106E0042C2FA /* Build configuration list for PBXNativeTarget "Juno" */ = {
+		1428F8FB243D1C66005F42ED /* Build configuration list for PBXNativeTarget "Juno" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7AC95067243C106E0042C2FA /* Debug */,
-				7AC95068243C106E0042C2FA /* Release */,
+				1428F8FC243D1C66005F42ED /* Debug */,
+				1428F8FD243D1C66005F42ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7AC95069243C106E0042C2FA /* Build configuration list for PBXNativeTarget "JunoTests" */ = {
+		1428F8FE243D1C66005F42ED /* Build configuration list for PBXNativeTarget "JunoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7AC9506A243C106E0042C2FA /* Debug */,
-				7AC9506B243C106E0042C2FA /* Release */,
+				1428F8FF243D1C66005F42ED /* Debug */,
+				1428F900243D1C66005F42ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7AC9506C243C106E0042C2FA /* Build configuration list for PBXNativeTarget "JunoUITests" */ = {
+		1428F901243D1C66005F42ED /* Build configuration list for PBXNativeTarget "JunoUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7AC9506D243C106E0042C2FA /* Debug */,
-				7AC9506E243C106E0042C2FA /* Release */,
+				1428F902243D1C66005F42ED /* Debug */,
+				1428F903243D1C66005F42ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 7AC95034243C106A0042C2FA /* Project object */;
+	rootObject = 1428F8C9243D1C64005F42ED /* Project object */;
 }

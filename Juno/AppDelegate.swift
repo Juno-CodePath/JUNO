@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Juno
 //
-//  Created by Nobel Gebru on 4/6/20.
-//  Copyright © 2020 Nobel Gebru. All rights reserved.
+//  Created by Sean Mills on 4/7/20.
+//  Copyright © 2020 Juno-Codepath. All rights reserved.
 //
 
 import UIKit
