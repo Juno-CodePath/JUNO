@@ -46,6 +46,7 @@ Juno is an online dating app that displays user compatibility based on their sun
 
 * Login
    * User can log in.
+   * User stays logged in across app restarts.
 * Registration
    * User can create an account.
 * Stream
@@ -56,9 +57,10 @@ Juno is an online dating app that displays user compatibility based on their sun
    * User can send messages to matched profiles.
 * Profile
    * User can view their profile with their age and number of matches.
+   * User can update their profile.
 * Settings
-   * User can update their profile with their location or add a picture.
-   *  User can filter feed based on age, location, etc.
+   * User can update their email, location, time of birth etc
+   * User can logout
    * User can receive notifications.
 
 ### 3. Navigation
