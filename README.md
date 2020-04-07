@@ -138,6 +138,151 @@ Juno is an online dating app that displays user compatibility based on their sun
 | sign     | Array | map used to store the compatibility value between each sign |
 
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+#### Networking
+#### List of network requests by screen
+   - Login Screen
+      - (Read/GET) Query logged in user object
+        ```swift
+        let username = usernameField.text!
+        let password = passwordField.text!
+        
+        PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
+            if user != nil {
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            } else {
+                print("Error: \(error?.localizedDescription)")
+            }
+        }
+        ```
+   - Registration Screen
+      - (Create/POST) Create a new user
+        ```swift
+        let user = PFUser()
+        user.username = usernameField.text
+        user.password = passwordField.text
+        
+        user.signUpInBackground { (success, error) in
+            if success {
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            } else {
+                print("Error: \(error?.localizedDescription)")
+            }
+        }
+        ```
+      - (Create/POST) Create profile photo and additional user info
+        ```swift
+        let currentProfile = PFObject(className: "Profile")
+        profile["userId"] = PFUser.current()!
+        let imageData = imageView.image!.pngData()
+        let file = PFFileObject(name: "image.png", data: imageData!)
+        currentProfile["profilePhoto"] = file
+        currentProfile["name"] = nameField.text
+        
+        currentProfile.saveInBackground { (success, error) in
+            if success {
+                self.dismiss(animated: true, completion: nil)
+                print("saved!")
+            } else {
+                print("error!")
+            }
+        }
+        ```
+   - Stream Screen
+      - (Read/GET) Query profiles that the user has not liked
+         ```swift
+         let query = PFQuery(className:"Profile")
+         query.whereKey("userId", notContainedIn: currentProfile["likes"])
+         query.findObjectsInBackground { (profiles: [PFObject]?, error: Error?) in
+            if let error = error { 
+               print(error.localizedDescription)
+            } else if let profiles = profiles {
+               print("Successfully retrieved \(profiles.count) profiles.")
+           // TODO: Do something with profiles...
+            }
+         }
+         ```
+      - (Create/POST) Create a new like on a profile
+         ```swift
+         user = PFUser.current()!
+         currentProfile.add(user, forKey: "likes")
+         currentProfile.saveInBackground { (success, error) in
+             if success {
+                 print("Like added")
+             } else {
+                 print("Error adding like")
+             }
+         }
+         ```
+   - Profile Screen
+      - (Update/PUT) Update user profile image and additional user info
+        ```swift
+        let imageData = imageView.image!.pngData()
+        let file = PFFileObject(name: "image.png", data: imageData!)
+        
+        currentProfile["profilePhoto"] = file
+        currentProfile["about"] = aboutMeField.text
+        
+        currentProfile.saveInBackground { (success, error) in
+            if success {
+                self.dismiss(animated: true, completion: nil)
+                print("saved!")
+            } else {
+                print("error!")
+            }
+        }
+        ```
+   - Settings Screen
+      - (Update/PUT) Update user info
+        ```swift
+        let location = locationField.text
+        currentProfile["location"] = location
+
+        currentUser.saveInBackground { (success, error) in
+            if success {
+                print("Changes saved")
+            } else {
+                print("Error saving changes")
+            }
+        }
+        ```
+   - Messaging Screen
+      - (Read/GET) Query matched profiles
+        ```swift
+         let query = PFQuery(className:"User")
+         query.whereKey("userId", containedIn: matches)
+         query.findObjectsInBackground { (profiles: [PFObject]?, error: Error?) in
+            if let error = error { 
+               print(error.localizedDescription)
+            } else if let profiles = profiles {
+               print("Successfully retrieved \(profiles.count) profiles.")
+           // TODO: Do something with profiles...
+            }
+         }
+         ```
+      - (Read/GET) Query messages
+        ```swift
+        let predicate = NSPredicate(format: "conversation_id == %@", conversationId)
+        self.conversation_query = Message.query(with: predicate)?.order(byAscending: "createdAt")
+        self.conversation_query.findObjectsInBackground { (objects, err) in
+            if err==nil {
+                if let messages = objects as? [Message] {
+                    self.messages = messages
+                    self.collectionView.reloadData()
+                }
+            }
+        }
+        ```
+     - (Create/POST) Create new message
+        ```swift
+        message.body_text = text
+        message.saveInBackground { (saved, err) in
+            if saved {
+                print("Message sent")
+            }else {
+                if let error = err {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+        finishSendingMessage()
+        ```
