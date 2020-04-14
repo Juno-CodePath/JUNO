@@ -30,9 +30,10 @@ class HomeViewController: UIViewController {
             loadProfiles()
             count = 0
         }
-        //nameLabel.text = profiles[count]
-        //addressLabel.text = profiles[count]["address"]
-        //compatibilityLabel.text = profiles[count]["compatibility"]
+         
+        let profile = profiles[count]
+        nameLabel.text = profile["name"] as? String
+        addressLabel.text = profile["location"] as? String
         count += 1
     }
     
