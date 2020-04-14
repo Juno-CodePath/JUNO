@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var compatibilityLabel: UILabel!
     
     var count = 0
-    var profiles = [[String:Any]]()
+    var profiles = [PFObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,19 +30,20 @@ class HomeViewController: UIViewController {
             loadProfiles()
             count = 0
         }
-//        nameLabel.text = profiles[count]["name"]
-//        addressLabel.text = profiles[count]["address"]
-//        compatibilityLabel.text = profiles[count]["compatibility"]
+        //nameLabel.text = profiles[count]
+        //addressLabel.text = profiles[count]["address"]
+        //compatibilityLabel.text = profiles[count]["compatibility"]
         count += 1
     }
     
     func loadProfiles() {
-        let query = PFQuery(className: "Users")
+        let query = PFQuery(className: "Profile")
+        query.includeKeys(["owner", "likes", "dislikes", "matches"])
         query.limit = 20
         
-        query.findObjectsInBackground { (users, error) in
-            if users != nil {
-//                self.profiles = users!
+        query.findObjectsInBackground { (profs, error) in
+            if profs != nil {
+                self.profiles = profs!
             }
         }
     }

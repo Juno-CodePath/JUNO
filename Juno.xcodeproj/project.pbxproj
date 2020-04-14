@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		687FF911D3F2DEA22D350C11 /* Pods_Juno_JunoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8372FCE47A722675EEFF5677 /* Pods_Juno_JunoUITests.framework */; };
 		96E1161C78B25614BC19C038 /* Pods_JunoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A0BD24A11BB0CADC12B3BF /* Pods_JunoTests.framework */; };
 		AEAC24142445466F0071791A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC24132445466F0071791A /* AppDelegate.swift */; };
-		AEAC24162445466F0071791A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC24152445466F0071791A /* SceneDelegate.swift */; };
 		AEAC241B2445466F0071791A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEAC24192445466F0071791A /* Main.storyboard */; };
 		AEAC241D244546710071791A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEAC241C244546710071791A /* Assets.xcassets */; };
 		AEAC2420244546710071791A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEAC241E244546710071791A /* LaunchScreen.storyboard */; };
@@ -47,7 +46,6 @@
 		8372FCE47A722675EEFF5677 /* Pods_Juno_JunoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Juno_JunoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEAC24102445466F0071791A /* Juno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Juno.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEAC24132445466F0071791A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AEAC24152445466F0071791A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AEAC241A2445466F0071791A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AEAC241C244546710071791A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEAC241F244546710071791A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				AEAC24132445466F0071791A /* AppDelegate.swift */,
-				AEAC24152445466F0071791A /* SceneDelegate.swift */,
 				AEAC24192445466F0071791A /* Main.storyboard */,
 				AEAC241C244546710071791A /* Assets.xcassets */,
 				AEAC241E244546710071791A /* LaunchScreen.storyboard */,
@@ -165,7 +162,6 @@
 				62391B20F4CB71B8A52ACC58 /* Pods-JunoTests.debug.xcconfig */,
 				24BFFB04CABE8D8608F8D666 /* Pods-JunoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -409,7 +405,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEAC24142445466F0071791A /* AppDelegate.swift in Sources */,
-				AEAC24162445466F0071791A /* SceneDelegate.swift in Sources */,
 				AEAC2444244549A60071791A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
