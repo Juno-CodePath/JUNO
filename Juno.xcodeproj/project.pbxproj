@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		149D9C2E244564400004F77F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D9C2D244564400004F77F /* ProfileViewController.swift */; };
 		687FF911D3F2DEA22D350C11 /* Pods_Juno_JunoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8372FCE47A722675EEFF5677 /* Pods_Juno_JunoUITests.framework */; };
 		96E1161C78B25614BC19C038 /* Pods_JunoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A0BD24A11BB0CADC12B3BF /* Pods_JunoTests.framework */; };
 		AEAC24142445466F0071791A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC24132445466F0071791A /* AppDelegate.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		149D9C2D244564400004F77F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1E47DD90AC83BBC6369A9705 /* Pods-Juno.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Juno.release.xcconfig"; path = "Target Support Files/Pods-Juno/Pods-Juno.release.xcconfig"; sourceTree = "<group>"; };
 		24BFFB04CABE8D8608F8D666 /* Pods-JunoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JunoTests.release.xcconfig"; path = "Target Support Files/Pods-JunoTests/Pods-JunoTests.release.xcconfig"; sourceTree = "<group>"; };
 		33AA073D0ABD0D8A020A1DF9 /* Pods-Juno.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Juno.debug.xcconfig"; path = "Target Support Files/Pods-Juno/Pods-Juno.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				AEAC241E244546710071791A /* LaunchScreen.storyboard */,
 				AEAC2421244546710071791A /* Info.plist */,
 				AEAC2443244549A60071791A /* HomeViewController.swift */,
+				149D9C2D244564400004F77F /* ProfileViewController.swift */,
 			);
 			path = Juno;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				149D9C2E244564400004F77F /* ProfileViewController.swift in Sources */,
 				AEAC24142445466F0071791A /* AppDelegate.swift in Sources */,
 				AEAC2444244549A60071791A /* HomeViewController.swift in Sources */,
 			);
