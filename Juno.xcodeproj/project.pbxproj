@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AEAC24142445466F0071791A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC24132445466F0071791A /* AppDelegate.swift */; };
+		AEAC24162445466F0071791A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC24152445466F0071791A /* SceneDelegate.swift */; };
+		AEAC24182445466F0071791A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC24172445466F0071791A /* ViewController.swift */; };
+		AEAC241B2445466F0071791A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEAC24192445466F0071791A /* Main.storyboard */; };
+		AEAC241D244546710071791A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEAC241C244546710071791A /* Assets.xcassets */; };
+		AEAC2420244546710071791A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEAC241E244546710071791A /* LaunchScreen.storyboard */; };
+		AEAC242B244546720071791A /* JunoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC242A244546720071791A /* JunoTests.swift */; };
+		AEAC2436244546720071791A /* JunoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC2435244546720071791A /* JunoUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AEAC2427244546720071791A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEAC24082445466F0071791A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AEAC240F2445466F0071791A;
+			remoteInfo = Juno;
+		};
+		AEAC2432244546720071791A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEAC24082445466F0071791A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AEAC240F2445466F0071791A;
+			remoteInfo = Juno;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AEAC24102445466F0071791A /* Juno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Juno.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEAC24132445466F0071791A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AEAC24152445466F0071791A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AEAC24172445466F0071791A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AEAC241A2445466F0071791A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AEAC241C244546710071791A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AEAC241F244546710071791A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AEAC2421244546710071791A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEAC2426244546720071791A /* JunoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JunoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEAC242A244546720071791A /* JunoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JunoTests.swift; sourceTree = "<group>"; };
+		AEAC242C244546720071791A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEAC2431244546720071791A /* JunoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JunoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEAC2435244546720071791A /* JunoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JunoUITests.swift; sourceTree = "<group>"; };
+		AEAC2437244546720071791A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AEAC240D2445466F0071791A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEAC2423244546720071791A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEAC242E244546720071791A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AEAC24072445466F0071791A = {
+			isa = PBXGroup;
+			children = (
+				AEAC24122445466F0071791A /* Juno */,
+				AEAC2429244546720071791A /* JunoTests */,
+				AEAC2434244546720071791A /* JunoUITests */,
+				AEAC24112445466F0071791A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AEAC24112445466F0071791A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEAC24102445466F0071791A /* Juno.app */,
+				AEAC2426244546720071791A /* JunoTests.xctest */,
+				AEAC2431244546720071791A /* JunoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AEAC24122445466F0071791A /* Juno */ = {
+			isa = PBXGroup;
+			children = (
+				AEAC24132445466F0071791A /* AppDelegate.swift */,
+				AEAC24152445466F0071791A /* SceneDelegate.swift */,
+				AEAC24172445466F0071791A /* ViewController.swift */,
+				AEAC24192445466F0071791A /* Main.storyboard */,
+				AEAC241C244546710071791A /* Assets.xcassets */,
+				AEAC241E244546710071791A /* LaunchScreen.storyboard */,
+				AEAC2421244546710071791A /* Info.plist */,
+			);
+			path = Juno;
+			sourceTree = "<group>";
+		};
+		AEAC2429244546720071791A /* JunoTests */ = {
+			isa = PBXGroup;
+			children = (
+				AEAC242A244546720071791A /* JunoTests.swift */,
+				AEAC242C244546720071791A /* Info.plist */,
+			);
+			path = JunoTests;
+			sourceTree = "<group>";
+		};
+		AEAC2434244546720071791A /* JunoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AEAC2435244546720071791A /* JunoUITests.swift */,
+				AEAC2437244546720071791A /* Info.plist */,
+			);
+			path = JunoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AEAC240F2445466F0071791A /* Juno */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEAC243A244546720071791A /* Build configuration list for PBXNativeTarget "Juno" */;
+			buildPhases = (
+				AEAC240C2445466F0071791A /* Sources */,
+				AEAC240D2445466F0071791A /* Frameworks */,
+				AEAC240E2445466F0071791A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Juno;
+			productName = Juno;
+			productReference = AEAC24102445466F0071791A /* Juno.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AEAC2425244546720071791A /* JunoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEAC243D244546720071791A /* Build configuration list for PBXNativeTarget "JunoTests" */;
+			buildPhases = (
+				AEAC2422244546720071791A /* Sources */,
+				AEAC2423244546720071791A /* Frameworks */,
+				AEAC2424244546720071791A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AEAC2428244546720071791A /* PBXTargetDependency */,
+			);
+			name = JunoTests;
+			productName = JunoTests;
+			productReference = AEAC2426244546720071791A /* JunoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AEAC2430244546720071791A /* JunoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEAC2440244546720071791A /* Build configuration list for PBXNativeTarget "JunoUITests" */;
+			buildPhases = (
+				AEAC242D244546720071791A /* Sources */,
+				AEAC242E244546720071791A /* Frameworks */,
+				AEAC242F244546720071791A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AEAC2433244546720071791A /* PBXTargetDependency */,
+			);
+			name = JunoUITests;
+			productName = JunoUITests;
+			productReference = AEAC2431244546720071791A /* JunoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AEAC24082445466F0071791A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Cicely Beckford";
+				TargetAttributes = {
+					AEAC240F2445466F0071791A = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					AEAC2425244546720071791A = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = AEAC240F2445466F0071791A;
+					};
+					AEAC2430244546720071791A = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = AEAC240F2445466F0071791A;
+					};
+				};
+			};
+			buildConfigurationList = AEAC240B2445466F0071791A /* Build configuration list for PBXProject "Juno" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AEAC24072445466F0071791A;
+			productRefGroup = AEAC24112445466F0071791A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AEAC240F2445466F0071791A /* Juno */,
+				AEAC2425244546720071791A /* JunoTests */,
+				AEAC2430244546720071791A /* JunoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AEAC240E2445466F0071791A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEAC2420244546710071791A /* LaunchScreen.storyboard in Resources */,
+				AEAC241D244546710071791A /* Assets.xcassets in Resources */,
+				AEAC241B2445466F0071791A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEAC2424244546720071791A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEAC242F244546720071791A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AEAC240C2445466F0071791A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEAC24182445466F0071791A /* ViewController.swift in Sources */,
+				AEAC24142445466F0071791A /* AppDelegate.swift in Sources */,
+				AEAC24162445466F0071791A /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEAC2422244546720071791A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEAC242B244546720071791A /* JunoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEAC242D244546720071791A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEAC2436244546720071791A /* JunoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AEAC2428244546720071791A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AEAC240F2445466F0071791A /* Juno */;
+			targetProxy = AEAC2427244546720071791A /* PBXContainerItemProxy */;
+		};
+		AEAC2433244546720071791A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AEAC240F2445466F0071791A /* Juno */;
+			targetProxy = AEAC2432244546720071791A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AEAC24192445466F0071791A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AEAC241A2445466F0071791A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AEAC241E244546710071791A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AEAC241F244546710071791A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AEAC2438244546720071791A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AEAC2439244546720071791A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AEAC243B244546720071791A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Juno/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Cmp.Juno;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AEAC243C244546720071791A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Juno/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Cmp.Juno;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AEAC243E244546720071791A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JunoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Cmp.JunoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Juno.app/Juno";
+			};
+			name = Debug;
+		};
+		AEAC243F244546720071791A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JunoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Cmp.JunoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Juno.app/Juno";
+			};
+			name = Release;
+		};
+		AEAC2441244546720071791A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JunoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Cmp.JunoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Juno;
+			};
+			name = Debug;
+		};
+		AEAC2442244546720071791A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JunoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Cmp.JunoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Juno;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AEAC240B2445466F0071791A /* Build configuration list for PBXProject "Juno" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEAC2438244546720071791A /* Debug */,
+				AEAC2439244546720071791A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEAC243A244546720071791A /* Build configuration list for PBXNativeTarget "Juno" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEAC243B244546720071791A /* Debug */,
+				AEAC243C244546720071791A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEAC243D244546720071791A /* Build configuration list for PBXNativeTarget "JunoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEAC243E244546720071791A /* Debug */,
+				AEAC243F244546720071791A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEAC2440244546720071791A /* Build configuration list for PBXNativeTarget "JunoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEAC2441244546720071791A /* Debug */,
+				AEAC2442244546720071791A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AEAC24082445466F0071791A /* Project object */;
+}
