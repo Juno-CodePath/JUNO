@@ -16,6 +16,7 @@
 		AEAC242B244546720071791A /* JunoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC242A244546720071791A /* JunoTests.swift */; };
 		AEAC2436244546720071791A /* JunoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC2435244546720071791A /* JunoUITests.swift */; };
 		AEAC2444244549A60071791A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC2443244549A60071791A /* HomeViewController.swift */; };
+		AEAC24462446CA9E0071791A /* Zodiac.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC24452446CA9E0071791A /* Zodiac.swift */; };
 		C1C31909244CE330401D1540 /* Pods_Juno.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9A0E5CE3F413637D2EC758A /* Pods_Juno.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		AEAC2435244546720071791A /* JunoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JunoUITests.swift; sourceTree = "<group>"; };
 		AEAC2437244546720071791A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEAC2443244549A60071791A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AEAC24452446CA9E0071791A /* Zodiac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zodiac.swift; sourceTree = "<group>"; };
 		D9A0E5CE3F413637D2EC758A /* Pods_Juno.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Juno.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1DBA238BFA09B4D460E1B1 /* Pods-Juno-JunoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Juno-JunoUITests.release.xcconfig"; path = "Target Support Files/Pods-Juno-JunoUITests/Pods-Juno-JunoUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +132,7 @@
 				AEAC241E244546710071791A /* LaunchScreen.storyboard */,
 				AEAC2421244546710071791A /* Info.plist */,
 				AEAC2443244549A60071791A /* HomeViewController.swift */,
+				AEAC24452446CA9E0071791A /* Zodiac.swift */,
 			);
 			path = Juno;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 			files = (
 				AEAC24142445466F0071791A /* AppDelegate.swift in Sources */,
 				AEAC2444244549A60071791A /* HomeViewController.swift in Sources */,
+				AEAC24462446CA9E0071791A /* Zodiac.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
