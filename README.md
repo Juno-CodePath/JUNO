@@ -24,9 +24,9 @@ Juno is an online dating app that displays user compatibility based on their sun
 
 **Required Must-have Stories**
 
-* User can log in.
-* User stays logged in across app restarts.
-* User can create an account.
+[] User can log in.
+[] User stays logged in across app restarts.
+[] User can create an account.
 * User can view a feed of profiles.
 * User can tap yes/no to a profile.
 * User can view their compatibility score with other users.
