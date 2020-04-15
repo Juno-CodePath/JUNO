@@ -1,0 +1,6 @@
+framework module Pods_JunoTests {
+  umbrella header "Pods-JunoTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
