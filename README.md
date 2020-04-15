@@ -290,3 +290,10 @@ Juno is an online dating app that displays user compatibility based on their sun
         }
         finishSendingMessage()
         ```
+
+## Development
+### Milestone 1
+
+<img src='http://g.recordit.co/HJEobQ39go.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/H71L1QauWm.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/F3rzkHstbS.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
