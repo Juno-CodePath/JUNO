@@ -14,6 +14,9 @@ class RegistrationScreenController: UIViewController {
     
     @IBOutlet weak var passwordField: UITextField!
     
+//    var userProfile: PFObject!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,13 +30,53 @@ class RegistrationScreenController: UIViewController {
          
          user.signUpInBackground { (success, error) in
              if success {
-                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                self.createProfile()
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
              } else {
                 print("Error: \(String(describing: error?.localizedDescription))")
              }
          }
-         // other fields can be set just like with PFObject
-        // user["phone"] = "415-392-0202"
+    }
+    
+    func createProfile() {
+        let profile = PFObject(className: "Profile")
+        
+        profile["name"] = "Toby Grant"
+        profile["location"] = PFGeoPoint(latitude:35,longitude:-65)
+        profile["owner"] = PFUser.current()!
+        profile["dob"] = Date()
+        profile["sign"] = "Taurus"
+        profile["likes"] = Array<String>()
+        profile["dislikes"] = Array<String>()
+        profile["matches"] = Array<String>()
+        
+//        let imageData = imageView.image!.pngData()
+//        let file = PFFileObject(name:"image.png", data: imageData!)
+        
+//        profile["image"] = file
+        
+        profile.saveInBackground { (success, error) in
+            if success {
+                self.getUserProfile()
+            } else {
+                print("error")
+            }
+        }
+    }
+    
+    func getUserProfile() {
+        
+        let user = PFUser.current()
+        let query = PFQuery(className: "Profile")
+        query.includeKey("owner")
+        
+        query.whereKey("owner", equalTo: user).findObjectsInBackground{(prof, error) in
+            if prof != nil {
+                Global.shared.userProfile = prof![0]
+            } else {
+                print("no posts")
+            }
+        }
     }
     
     /*

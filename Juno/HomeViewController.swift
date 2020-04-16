@@ -19,47 +19,17 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var yesButton: UIButton!
     
-    var count = -1
+    var count = 0
     var profiles = [PFObject]()
-    
-    var userProfile: PFObject!
-    
     var zodiac = Zodiac()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        login()
+        loadProfiles()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        loadProfiles()
-    }
-    
-    func login () {
-        PFUser.logInWithUsername(inBackground: "temp", password: "temp") { (user, error) in
-            if user != nil {
-                self.getUserProfile()
-            } else {
-                print("Error: \(error?.localizedDescription)")
-            }
-        }
-    }
-    
-    func getUserProfile() {
-        
-        let user = PFUser.current()
-        let query = PFQuery(className: "Profile")
-        query.includeKey("owner")
-        
-        query.whereKey("owner", equalTo: user).findObjectsInBackground{(prof, error) in
-            if prof != nil {
-                self.userProfile = prof![0]
-                self.loadProfiles()
-            } else {
-                print("no posts")
-            }
-        }
     }
     
     func loadProfiles() {
@@ -108,7 +78,7 @@ class HomeViewController: UIViewController {
         
         location = profile["location"] as! PFGeoPoint
         getAddress(location)
-        compatibilityLabel.text = zodiac.getCompatibility(first: userProfile!["sign"] as! String, second: profile["sign"] as! String)
+        compatibilityLabel.text = zodiac.getCompatibility(first: Global.shared.userProfile["sign"] as! String, second: profile["sign"] as! String)
     }
     
     func setData() {
@@ -117,7 +87,6 @@ class HomeViewController: UIViewController {
             loadProfiles()
             return
         }
-        
         var location: PFGeoPoint = PFGeoPoint()
         let profile = profiles[count]
         
@@ -131,20 +100,19 @@ class HomeViewController: UIViewController {
         
         location = profile["location"] as! PFGeoPoint
         getAddress(location)
-        compatibilityLabel.text = zodiac.getCompatibility(first: userProfile!["sign"] as! String, second: profile["sign"] as! String)
+        compatibilityLabel.text = zodiac.getCompatibility(first: Global.shared.userProfile["sign"] as! String, second: profile["sign"] as! String)
     }
     
     func updateCount() {
         
         let id = PFUser.current()?.objectId as! String
-        count += 1
-        
+
         while count < profiles.count {
             let matchesArray = profiles[count]["matches"] as? Array<String> ?? []
             let dislikesArray = profiles[count]["dislikes"] as? Array<String> ?? []
             
-            let userLikes = userProfile["likes"] as? Array<String> ?? []
-            let userDislikes = userProfile["dislikes"] as? Array<String> ?? []
+            let userLikes = Global.shared.userProfile["likes"] as? Array<String> ?? []
+            let userDislikes = Global.shared.userProfile["dislikes"] as? Array<String> ?? []
             
             let user = profiles[count]["owner"] as! PFObject
             
@@ -162,7 +130,6 @@ class HomeViewController: UIViewController {
                 break
             }
         }
-        print(self.count)
     }
     
     func getAddress(_ location: PFGeoPoint){
@@ -201,9 +168,9 @@ class HomeViewController: UIViewController {
         let id = PFUser.current()?.objectId
         let likedUser = self.profiles[self.count]["owner"] as! PFObject
         
-        self.userProfile.add(likedUser.objectId, forKey: "dislikes")
+        Global.shared.userProfile.add(likedUser.objectId, forKey: "dislikes")
         
-        self.userProfile.saveInBackground { (success, error) in
+        Global.shared.userProfile.saveInBackground { (success, error) in
             if success {
                 print("Saved")
             } else {
@@ -219,12 +186,12 @@ class HomeViewController: UIViewController {
         let id = PFUser.current()?.objectId
         let likedUser = self.profiles[self.count]["owner"] as! PFObject
         
-        self.userProfile.add(likedUser.objectId, forKey: "likes")
+        Global.shared.userProfile.add(likedUser.objectId, forKey: "likes")
         
         let array = self.profiles[self.count]["likes"] as? Array<String> ?? []
         if array.contains(id!) {
             self.profiles[self.count].add(id, forKey: "matches")
-            self.userProfile.add(likedUser.objectId, forKey: "matches")
+            Global.shared.userProfile.add(likedUser.objectId, forKey: "matches")
             
             self.profiles[self.count].saveInBackground { (success, error) in
                 if success {
@@ -235,7 +202,7 @@ class HomeViewController: UIViewController {
             }
         }
         
-        self.userProfile.saveInBackground { (success, error) in
+        Global.shared.userProfile.saveInBackground { (success, error) in
             if success {
                 print("Saved")
             } else {
