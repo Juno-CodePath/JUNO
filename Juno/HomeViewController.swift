@@ -25,6 +25,10 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        noButton.isEnabled = false
+        yesButton.isEnabled = false
+        
         loadProfiles()
     }
     
@@ -82,11 +86,16 @@ class HomeViewController: UIViewController {
     }
     
     func setData() {
+        
         updateCount()
         if count >= profiles.count {
             loadProfiles()
             return
         }
+        
+        noButton.isEnabled = true
+        yesButton.isEnabled = true
+        
         var location: PFGeoPoint = PFGeoPoint()
         let profile = profiles[count]
         
@@ -105,30 +114,28 @@ class HomeViewController: UIViewController {
     
     func updateCount() {
         
-        let id = PFUser.current()?.objectId as! String
+        let id = PFUser.current()?.objectId!
 
         while count < profiles.count {
-            let matchesArray = profiles[count]["matches"] as? Array<String> ?? []
-            let dislikesArray = profiles[count]["dislikes"] as? Array<String> ?? []
+            let dislikesArray = profiles[count]["dislikes"] as? Array<String>
             
-            let userLikes = Global.shared.userProfile["likes"] as? Array<String> ?? []
-            let userDislikes = Global.shared.userProfile["dislikes"] as? Array<String> ?? []
+            let userLikes = Global.shared.userProfile["likes"] as? Array<String>
+            let userDislikes = Global.shared.userProfile["dislikes"] as? Array<String>
             
             let user = profiles[count]["owner"] as! PFObject
             
-            if matchesArray.contains(id) {
+            if dislikesArray!.contains(id!) {
                 count += 1
-            } else if dislikesArray.contains(id) {
+            } else if userLikes!.contains(user.objectId!) {
                 count += 1
-            } else if userLikes.contains(user.objectId!) {
+            } else if userDislikes!.contains(user.objectId!) {
                 count += 1
-            } else if userDislikes.contains(user.objectId!) {
-                count += 1
-            } else if id.elementsEqual(user.objectId!) {
+            } else if id!.elementsEqual(user.objectId!) {
                 count += 1
             } else {
                 break
             }
+            print(count)
         }
     }
     
@@ -165,52 +172,66 @@ class HomeViewController: UIViewController {
     
     @IBAction func onNo(_ sender: Any) {
         
-        let id = PFUser.current()?.objectId
+        noButton.isEnabled = false
+        yesButton.isEnabled = false
+        
         let likedUser = self.profiles[self.count]["owner"] as! PFObject
         
         Global.shared.userProfile.add(likedUser.objectId, forKey: "dislikes")
         
         Global.shared.userProfile.saveInBackground { (success, error) in
             if success {
-                print("Saved")
+                self.setData()
             } else {
                 print("Error saving")
             }
         }
-
-        setData()
     }
     
     @IBAction func onYes(_ sender: Any) {
+        
+        noButton.isEnabled = false
+        yesButton.isEnabled = false
         
         let id = PFUser.current()?.objectId
         let likedUser = self.profiles[self.count]["owner"] as! PFObject
         
         Global.shared.userProfile.add(likedUser.objectId, forKey: "likes")
         
-        let array = self.profiles[self.count]["likes"] as? Array<String> ?? []
-        if array.contains(id!) {
-            self.profiles[self.count].add(id, forKey: "matches")
-            Global.shared.userProfile.add(likedUser.objectId, forKey: "matches")
+        let array = self.profiles[self.count]["likes"] as? Array<String>
+        if array!.contains(id!) {
             
-            self.profiles[self.count].saveInBackground { (success, error) in
+            let match = PFObject(className: "Match")
+          
+            match["profiles"] = [Global.shared.userProfile, self.profiles[self.count]] as Array<PFObject>
+            match["messages"] = Array<String>()
+            
+            match.saveInBackground { (success, error) in
                 if success {
-                    print("Saved")
+                    print("saved match")
+                    
+                    let likedUserMatches = self.profiles[self.count]["matches"] as! Int
+                    let userMatches = Global.shared.userProfile["matches"] as! Int
+                    
+                    self.profiles[self.count]["matches"] = likedUserMatches + 1
+                    Global.shared.userProfile["matches"] = userMatches + 1
+                    
+                    self.profiles[self.count].saveInBackground()
+//                    Global.shared.userProfile.saveInBackground()
+                    
                 } else {
-                    print("Error saving")
+                    print("error")
                 }
             }
         }
         
         Global.shared.userProfile.saveInBackground { (success, error) in
             if success {
-                print("Saved")
+                self.setData()
             } else {
                 print("Error saving")
             }
         }
-
-        setData()
     }
     
     /*

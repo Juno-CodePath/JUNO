@@ -10,8 +10,10 @@
 		687FF911D3F2DEA22D350C11 /* Pods_Juno_JunoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8372FCE47A722675EEFF5677 /* Pods_Juno_JunoUITests.framework */; };
 		96E1161C78B25614BC19C038 /* Pods_JunoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A0BD24A11BB0CADC12B3BF /* Pods_JunoTests.framework */; };
 		AE0140452447F0EA0043B802 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0140442447F0EA0043B802 /* Global.swift */; };
-		AE01404724481A230043B802 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE01404624481A230043B802 /* MessagesViewController.swift */; };
-		AE01404924481A2E0043B802 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE01404824481A2E0043B802 /* ChatViewController.swift */; };
+		AE01404924481A2E0043B802 /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE01404824481A2E0043B802 /* ChatTableViewController.swift */; };
+		AE01404B24481B950043B802 /* MatchesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE01404A24481B950043B802 /* MatchesTableViewController.swift */; };
+		AE01404D24481C1E0043B802 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE01404C24481C1E0043B802 /* ChatCell.swift */; };
+		AE01404F24481C2D0043B802 /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE01404E24481C2D0043B802 /* MatchCell.swift */; };
 		AEAC24142445466F0071791A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC24132445466F0071791A /* AppDelegate.swift */; };
 		AEAC241B2445466F0071791A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEAC24192445466F0071791A /* Main.storyboard */; };
 		AEAC241D244546710071791A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEAC241C244546710071791A /* Assets.xcassets */; };
@@ -50,8 +52,10 @@
 		62391B20F4CB71B8A52ACC58 /* Pods-JunoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JunoTests.debug.xcconfig"; path = "Target Support Files/Pods-JunoTests/Pods-JunoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8372FCE47A722675EEFF5677 /* Pods_Juno_JunoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Juno_JunoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE0140442447F0EA0043B802 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
-		AE01404624481A230043B802 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
-		AE01404824481A2E0043B802 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		AE01404824481A2E0043B802 /* ChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
+		AE01404A24481B950043B802 /* MatchesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesTableViewController.swift; sourceTree = "<group>"; };
+		AE01404C24481C1E0043B802 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		AE01404E24481C2D0043B802 /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
 		AEAC24102445466F0071791A /* Juno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Juno.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEAC24132445466F0071791A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEAC241A2445466F0071791A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -143,8 +147,10 @@
 				AEAC24452446CA9E0071791A /* Zodiac.swift */,
 				AEC80E8F24470443009AA8BA /* RegistrationScreenController.swift */,
 				AE0140442447F0EA0043B802 /* Global.swift */,
-				AE01404624481A230043B802 /* MessagesViewController.swift */,
-				AE01404824481A2E0043B802 /* ChatViewController.swift */,
+				AE01404824481A2E0043B802 /* ChatTableViewController.swift */,
+				AE01404A24481B950043B802 /* MatchesTableViewController.swift */,
+				AE01404C24481C1E0043B802 /* ChatCell.swift */,
+				AE01404E24481C2D0043B802 /* MatchCell.swift */,
 			);
 			path = Juno;
 			sourceTree = "<group>";
@@ -419,10 +425,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE01404724481A230043B802 /* MessagesViewController.swift in Sources */,
 				AEC80E9024470443009AA8BA /* RegistrationScreenController.swift in Sources */,
+				AE01404D24481C1E0043B802 /* ChatCell.swift in Sources */,
+				AE01404F24481C2D0043B802 /* MatchCell.swift in Sources */,
 				AEAC24142445466F0071791A /* AppDelegate.swift in Sources */,
-				AE01404924481A2E0043B802 /* ChatViewController.swift in Sources */,
+				AE01404B24481B950043B802 /* MatchesTableViewController.swift in Sources */,
+				AE01404924481A2E0043B802 /* ChatTableViewController.swift in Sources */,
 				AEAC2444244549A60071791A /* HomeViewController.swift in Sources */,
 				AE0140452447F0EA0043B802 /* Global.swift in Sources */,
 				AEAC24462446CA9E0071791A /* Zodiac.swift in Sources */,
@@ -600,7 +608,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7A2HRJ39PG;
 				INFOPLIST_FILE = Juno/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -618,7 +628,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7A2HRJ39PG;
 				INFOPLIST_FILE = Juno/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
