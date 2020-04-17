@@ -22,7 +22,7 @@ class ChatTableViewController: UITableViewController, MessageInputBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        messages = match["messages"] as! Array<PFObject>
+        getMessages()
         
         let profiles = match["profiles"] as! Array<PFObject>
         if profiles[0].objectId == Global.shared.userProfile.objectId {
@@ -32,7 +32,7 @@ class ChatTableViewController: UITableViewController, MessageInputBarDelegate {
         }
         
         self.title = matchProfile["name"] as? String
-        
+
         inputBar.inputTextView.placeholder = "Message"
         inputBar.sendButton.title = "Send"
         inputBar.delegate = self
@@ -41,30 +41,29 @@ class ChatTableViewController: UITableViewController, MessageInputBarDelegate {
         
         let center = NotificationCenter.default
         center.addObserver(self, selector: #selector(keyboardWillBeHidden(note:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        center.addObserver(self, selector: #selector(keyboardWillBeShown(note:)), name: UIResponder.keyboardWillShowNotification, object: nil)
 
     }
-
-    @objc func keyboardWillBeShown(note: Notification) {
-
-        if let keyboardSize = (note.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+    
+    func getMessages() {
+        let query = PFQuery(className: "Match")
+        query.includeKeys(["profiles", "messages"])
+        query.addDescendingOrder("createdAt")
+        
+        query.whereKey("objectId", equalTo: match.objectId).findObjectsInBackground { (match, error) in
+            if match != nil {
+                self.match = match![0]
+                self.messages = match![0]["messages"] as! Array<PFObject>
+                self.tableView.reloadData()
+            } else {
+                print("not found")
+            }
+            
         }
     }
-//    func keyboardWillHide(_ notification:Notification) {
-//
-//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-//            tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
-//        }
-//    }
     
     @objc func keyboardWillBeHidden(note: Notification) {
         inputBar.inputTextView.text = nil
         becomeFirstResponder()
-        
-        if let keyboardSize = (note.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-               }
     }
     
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
@@ -77,36 +76,17 @@ class ChatTableViewController: UITableViewController, MessageInputBarDelegate {
 
         match.saveInBackground{ (success, error) in
             if success {
-                print("Message saved")
-//                self.messages.append(message)
+                self.getMessages()
             } else {
                 print("Error saving comment")
             }
         }
         
-        self.messages.append(message)
-        tableView.reloadData()
-        
         //Clear and dismiss the comment bar
         inputBar.inputTextView.text = nil
         becomeFirstResponder()
+        inputBar.inputTextView.resignFirstResponder()
     }
-    
-//    func loadMessages() {
-//        let query = PFQuery(className: "Message")
-//        query.includeKeys(["author", "comments", "comments.author"])
-//
-//        numberOfPost = 20
-//        query.limit = numberOfPost
-//
-//        query.findObjectsInBackground { (posts, error) in
-//            if posts != nil {
-//                self.posts = posts!
-//                self.tableView.reloadData()
-//            }
-//            self.myRefreshControl.endRefreshing()
-//        }
-//    }
     
     override var inputAccessoryView: UIView? {
         return inputBar
@@ -136,6 +116,12 @@ class ChatTableViewController: UITableViewController, MessageInputBarDelegate {
         cell.timeLabel.text = getRelativeTime(date: messages[indexPath.row].createdAt!)
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row + 1 == messages.count {
+            getMessages()
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -173,17 +159,22 @@ extension Date {
         let day = 24 * hour
         let week = 7 * day
         
-        if (secondsAgo < (day * 2)) {
+        if (secondsAgo < day) {
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "h:mm a"
+            timeStamp = dateFormatter.string(from: self)
+            
+        } else if (secondsAgo < (day * 2)) {
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "h:mm a"
             timeStamp = "Yesterday " + dateFormatter.string(from: self)
-            
         } else if (secondsAgo < week) {
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "EEEE h:mm a"
-            timeStamp = dateFormatter.string(from: Date())
+            timeStamp = dateFormatter.string(from: self)
         } else {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MM/dd/yy h:mm a"

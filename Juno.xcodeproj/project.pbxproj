@@ -144,9 +144,9 @@
 				AEAC241E244546710071791A /* LaunchScreen.storyboard */,
 				AEAC2421244546710071791A /* Info.plist */,
 				AEAC2443244549A60071791A /* HomeViewController.swift */,
+				AE0140442447F0EA0043B802 /* Global.swift */,
 				AEAC24452446CA9E0071791A /* Zodiac.swift */,
 				AEC80E8F24470443009AA8BA /* RegistrationScreenController.swift */,
-				AE0140442447F0EA0043B802 /* Global.swift */,
 				AE01404824481A2E0043B802 /* ChatTableViewController.swift */,
 				AE01404A24481B950043B802 /* MatchesTableViewController.swift */,
 				AE01404C24481C1E0043B802 /* ChatCell.swift */,
@@ -610,7 +610,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7A2HRJ39PG;
 				INFOPLIST_FILE = Juno/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -630,7 +630,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7A2HRJ39PG;
 				INFOPLIST_FILE = Juno/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

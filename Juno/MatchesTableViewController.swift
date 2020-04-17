@@ -39,7 +39,6 @@ class MatchesTableViewController: UITableViewController {
             if matches != nil {
                 self.matches = matches!
                 self.tableView.reloadData()
-//                print("found")
             } else {
                 print("no matches")
             }
@@ -89,16 +88,23 @@ class MatchesTableViewController: UITableViewController {
         cell.photoView.af_setImage(withURL: url)
         cell.nameLabel.text = matchProfile["name"] as? String
         
-        let lastMessage = messages.last!
-        let messageAuthor = lastMessage["author"] as! PFUser
-        
-        if messageAuthor.objectId == PFUser.current()?.objectId {
-            cell.previewLabel.text = "You: " + ((lastMessage["text"] as? String)!)
+        if messages.isEmpty {
+            cell.previewLabel.text = "Say hi!"
+            cell.timeAgoLabel.text = ""
         } else {
-            cell.previewLabel.text = lastMessage["text"] as? String
+            
+            let lastMessage = messages.last!
+            let messageAuthor = lastMessage["author"] as! PFUser
+
+            if messageAuthor.objectId == PFUser.current()?.objectId {
+                cell.previewLabel.text = "You: " + ((lastMessage["text"] as? String)!)
+            } else {
+                cell.previewLabel.text = lastMessage["text"] as? String
+            }
+            
+            cell.timeAgoLabel.text = getRelativeTime(date: lastMessage.createdAt!)
+            
         }
-        
-        cell.timeAgoLabel.text = getRelativeTime(date: lastMessage.createdAt!)
         
         return cell
     }
@@ -128,10 +134,9 @@ class MatchesTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = sender as! UITableViewCell
         let indexPath = tableView.indexPath(for: cell)!
-        let match = matches[indexPath.row]
         
         let chatTableViewController = segue.destination as! ChatTableViewController
-        chatTableViewController.match = match
+        chatTableViewController.match = matches[indexPath.row]
     }
 
     /*
@@ -200,25 +205,23 @@ extension Date {
         let day = 24 * hour
         let week = 7 * day
         
-        if (secondsAgo < minute) {
-            timeStamp = "\(secondsAgo) s"
+        if (secondsAgo < day) {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "h:mm a"
+            timeStamp = dateFormatter.string(from: self)
             
-        } else if (secondsAgo < hour) {
-            let mins = secondsAgo / 60
-            timeStamp = "\(mins) m"
+        } else if (secondsAgo < (day * 2)) {
             
-        } else if (secondsAgo < day) {
-            let hrs = secondsAgo / (3600)
-            timeStamp = "\(hrs) h"
-            
+            timeStamp = "Yesterday"
         } else if (secondsAgo < week) {
-            let dys = secondsAgo / (86400)
-            timeStamp = "\(dys) d"
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "EEEE h:mm a"
+            timeStamp = dateFormatter.string(from: self)
             
         } else {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MM/dd/yy"
-            return dateFormatter.string(from: self)
+            timeStamp = dateFormatter.string(from: self)
         }
         return timeStamp
     }

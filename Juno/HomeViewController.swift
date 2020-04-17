@@ -47,7 +47,7 @@ class HomeViewController: UIViewController {
                 
                 if self.count >= self.profiles.count {
                     self.setBackground()
-                    self.viewedAllProfiles()
+                    self.setAlert()
                 } else {
                     self.setData()
                 }
@@ -55,7 +55,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func viewedAllProfiles() {
+    func setAlert() {
         
         let alert = UIAlertController(title: "Oh No!", message: "No more profiles.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: {
@@ -68,7 +68,7 @@ class HomeViewController: UIViewController {
     }
     
     func setBackground() {
-        
+        print("setbg")
         var location: PFGeoPoint = PFGeoPoint()
         let profile = profiles[profiles.count - 1]
         
@@ -89,6 +89,7 @@ class HomeViewController: UIViewController {
         
         updateCount()
         if count >= profiles.count {
+            print("loadprofilecall")
             loadProfiles()
             return
         }

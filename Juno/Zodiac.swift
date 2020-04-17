@@ -10,7 +10,7 @@ import Foundation
 
 class Zodiac {
     
-    var signs: [String: [Date]] = ["Aries": [Date("2020-03-21"), Date("2020-04-20")], "Taurus": [Date("2020-04-20"), Date("2020-05-21")], "Gemini": [Date("2020-05-21"), Date("2020-06-21")], "Cancer": [Date("2020-06-21"), Date("2020-07-23")], "Leo": [Date("2020-07-23"), Date("2020-08-24")], "Virgo": [Date("2020-08-23"), Date("2020-09-23")], "Libra": [Date("2020-09-23"), Date("2020-10-23")], "Scorpio": [Date("2020-10-23"), Date("2020-11-22")], "Sagittarius": [Date("2020-11-22"), Date("2020-12-22")], "Capricorn": [Date("2020-12-22"), Date("2020-01-20")], "Aquarius": [Date("2020-01-20"), Date("2020-02-19")], "Pisces": [Date("2020-02-19"), Date("2020-03-21")]]
+    var signs: [String: [Date]] = ["Aries": [Date("2020-03-21"), Date("2020-04-19")], "Taurus": [Date("2020-04-20"), Date("2020-05-20")], "Gemini": [Date("2020-05-21"), Date("2020-06-20")], "Cancer": [Date("2020-06-21"), Date("2020-07-22")], "Leo": [Date("2020-07-23"), Date("2020-08-22")], "Virgo": [Date("2020-08-23"), Date("2020-09-22")], "Libra": [Date("2020-09-23"), Date("2020-10-22")], "Scorpio": [Date("2020-10-23"), Date("2020-11-21")], "Sagittarius": [Date("2020-11-22"), Date("2020-12-21")], "Capricorn": [Date("2020-12-22"), Date("2020-01-19")], "Aquarius": [Date("2020-01-20"), Date("2020-02-18")], "Pisces": [Date("2020-02-19"), Date("2020-03-20")]]
     
     init() {
         
@@ -413,6 +413,6 @@ extension Date {
     }
     
     func isBetweeen(date date1: Date, andDate date2: Date) -> Bool {
-        return date1.compare(self) == self.compare(date2)
+        return date1.compare(self).rawValue * self.compare(date2).rawValue >= 0
     }
 }
