@@ -37,6 +37,9 @@ class ChatTableViewController: UITableViewController, MessageInputBarDelegate {
         inputBar.sendButton.title = "Send"
         inputBar.delegate = self
         
+//        let indexPath = NSIndexPath(item: messages.count, section: 0)
+//        tableView.scrollToRow(at: indexPath as IndexPath, at: UITableView.ScrollPosition.bottom, animated: true)
+        
         tableView.keyboardDismissMode = .interactive
         
         let center = NotificationCenter.default
@@ -54,10 +57,27 @@ class ChatTableViewController: UITableViewController, MessageInputBarDelegate {
                 self.match = match![0]
                 self.messages = match![0]["messages"] as! Array<PFObject>
                 self.tableView.reloadData()
+                let indexPath = NSIndexPath(item: self.messages.count - 1, section: 0)
+                self.tableView.scrollToRow(at: indexPath as IndexPath, at: UITableView.ScrollPosition.bottom, animated: true)
             } else {
                 print("not found")
             }
-            
+        }
+    }
+    
+    func getMessagesWithoutScroll() {
+       let query = PFQuery(className: "Match")
+        query.includeKeys(["profiles", "messages"])
+        query.addDescendingOrder("createdAt")
+        
+        query.whereKey("objectId", equalTo: match.objectId).findObjectsInBackground { (match, error) in
+            if match != nil {
+                self.match = match![0]
+                self.messages = match![0]["messages"] as! Array<PFObject>
+                self.tableView.reloadData()
+            } else {
+                print("not found")
+            }
         }
     }
     
@@ -103,11 +123,14 @@ class ChatTableViewController: UITableViewController, MessageInputBarDelegate {
         var imageFile: PFFileObject!
         
         cell.receivedView.isHidden = false
+        cell.receivedImageView.isHidden = false
         cell.sentView.isHidden = false
+        cell.sentImageView.isHidden = false
         
         if author.objectId == PFUser.current()?.objectId {
             
             cell.receivedView.isHidden = true
+            cell.receivedImageView.isHidden = true
             
             imageFile = Global.shared.userProfile["profilePhoto"] as? PFFileObject
             let urlString = imageFile.url!
@@ -115,11 +138,11 @@ class ChatTableViewController: UITableViewController, MessageInputBarDelegate {
             
             cell.sentImageView.af_setImage(withURL: url)
             cell.sentMessageLabel.text = messages[indexPath.row]["text"] as? String
-            cell.sentMessageLabel.translatesAutoresizingMaskIntoConstraints = false
             cell.sentTimeLabel.text = getRelativeTime(date: messages[indexPath.row].createdAt!)
         } else {
             
             cell.sentView.isHidden = true
+            cell.sentImageView.isHidden = true
             
             imageFile = matchProfile["profilePhoto"] as? PFFileObject
             let urlString = imageFile.url!
@@ -127,7 +150,6 @@ class ChatTableViewController: UITableViewController, MessageInputBarDelegate {
             
             cell.receivedImageView.af_setImage(withURL: url)
             cell.receivedMessageLabel.text = messages[indexPath.row]["text"] as? String
-            cell.receivedMessageLabel.translatesAutoresizingMaskIntoConstraints = false
             cell.receivedTimeLabel.text = getRelativeTime(date: messages[indexPath.row].createdAt!)
         }
         
@@ -136,7 +158,7 @@ class ChatTableViewController: UITableViewController, MessageInputBarDelegate {
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row + 1 == messages.count {
-            getMessages()
+            getMessagesWithoutScroll()
         }
     }
     
