@@ -23,8 +23,12 @@ class HomeViewController: UIViewController {
     var profiles = [PFObject]()
     var zodiac = Zodiac()
     
+    var numberofProfile: Int!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        numberofProfile = 0
         
         noButton.isEnabled = false
         yesButton.isEnabled = false
@@ -37,18 +41,22 @@ class HomeViewController: UIViewController {
     }
     
     func loadProfiles() {
+        numberofProfile = numberofProfile + 20
+        
         let query = PFQuery(className: "Profile")
         query.includeKeys(["owner", "likes", "dislikes", "matches"])
-        query.limit = 20
+        query.limit = numberofProfile
         
         query.findObjectsInBackground { (profs, error) in
             if profs != nil {
                 self.profiles = profs!
                 
                 if self.count >= self.profiles.count {
+                    print("max")
                     self.setBackground()
                     self.setAlert()
                 } else {
+                    print("call set again")
                     self.setData()
                 }
             }
@@ -182,6 +190,7 @@ class HomeViewController: UIViewController {
         
         Global.shared.userProfile.saveInBackground { (success, error) in
             if success {
+                print("on no call setdata")
                 self.setData()
             } else {
                 print("Error saving")
@@ -218,7 +227,6 @@ class HomeViewController: UIViewController {
                     Global.shared.userProfile["matches"] = userMatches + 1
                     
                     self.profiles[self.count].saveInBackground()
-//                    Global.shared.userProfile.saveInBackground()
                     
                 } else {
                     print("error")
@@ -228,6 +236,7 @@ class HomeViewController: UIViewController {
         
         Global.shared.userProfile.saveInBackground { (success, error) in
             if success {
+                print("on yes call setdata")
                 self.setData()
             } else {
                 print("Error saving")

@@ -630,7 +630,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
-                                    <action selector="onSignup:" destination="VO0-Rg-1Vr" eventType="touchUpInside" id="xT6-W1-Y4t"/>
                                     <segue destination="3VL-8p-tpR" kind="presentation" modalPresentationStyle="fullScreen" id="aFk-sJ-ft3"/>
                                 </connections>
                             </button>
@@ -654,7 +653,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xu2-Xy-ejZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1741" y="-354"/>
+            <point key="canvasLocation" x="-1742.0289855072465" y="-354.24107142857139"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Dd7-2u-8xV">

@@ -24,14 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         )
         
-        if PFUser.current() != nil {
-            
-            getUserProfile()
-            let main = UIStoryboard(name: "Main", bundle: nil)
-            let appTabBarController = main.instantiateViewController(withIdentifier: "AppTabBarController")
-            
-            window?.rootViewController = appTabBarController
-        }
+//        if PFUser.current() != nil {
+//            
+//            getUserProfile()
+//            let main = UIStoryboard(name: "Main", bundle: nil)
+//            let appTabBarController = main.instantiateViewController(withIdentifier: "AppTabBarController")
+//            
+//            window?.rootViewController = appTabBarController
+//        }
         
         return true
     }

@@ -18,6 +18,9 @@ class Zodiac {
    
     func getSunSign(date: Date) -> String {
         
+        print(signs["Aries"]![0])
+        print(signs["Aries"]![1])
+        
         if date.isBetweeen(date: signs["Aries"]![0], andDate: signs["Aries"]![1]) {
             return "Aries"
         } else if date.isBetweeen(date: signs["Taurus"]![0], andDate: signs["Taurus"]![1]) {
@@ -36,14 +39,12 @@ class Zodiac {
             return "Scorpio"
         } else if date.isBetweeen(date: signs["Sagittarius"]![0], andDate: signs["Sagittarius"]![1]) {
             return "Sagittarius"
-        } else if date.isBetweeen(date: signs["Capricorn"]![0], andDate: signs["Capricorn"]![1]) {
-            return "Capricorn"
         } else if date.isBetweeen(date: signs["Aquarius"]![0], andDate: signs["Aquarius"]![1]) {
             return "Aquarius"
-        } else if date.isBetweeen(date: signs["Pisces"]![0], andDate: signs["[Pisces]"]![1]) {
+        } else if date.isBetweeen(date: signs["Pisces"]![0], andDate: signs["Pisces"]![1]) {
             return "Pisces"
         }
-        return ""
+        return "Capricorn"
     }
     
     func getCompatibility(first sign1: String, second sign2: String) -> String {

@@ -41,7 +41,7 @@ class RegistrationScreenController: UIViewController, UIImagePickerControllerDel
     func showDatePicker(){
         //Formate Date
         datePicker.datePickerMode = .date
-
+        
         //ToolBar
         let toolbar = UIToolbar();
         toolbar.sizeToFit()
@@ -60,8 +60,16 @@ class RegistrationScreenController: UIViewController, UIImagePickerControllerDel
 
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd/yyyy"
-        dobField.text = formatter.string(from: datePicker.date)
-        date = datePicker.date
+        formatter.timeZone = TimeZone(abbreviation: "GMT")
+
+        
+        let timezoneOffset =  TimeZone.current.secondsFromGMT()
+        let epochDate = datePicker.date.timeIntervalSince1970
+        let timezoneEpochOffset = (epochDate + Double(timezoneOffset))
+        date = Date(timeIntervalSince1970: timezoneEpochOffset)
+        
+        dobField.text = formatter.string(from: date)
+        
         self.view.endEditing(true)
      }
 
@@ -146,12 +154,18 @@ class RegistrationScreenController: UIViewController, UIImagePickerControllerDel
     func createProfile() {
         let profile = PFObject(className: "Profile")
         
-        manager.requestLocation()
+//        let formatter = DateFormatter()
+//        formatter.timeZone = .current
         
+//        let birthDate = DateFormatter().date(from: date)
+        
+        manager.requestLocation()
+//        print(date)
         profile["name"] = nameField.text
         profile["owner"] = PFUser.current()!
         profile["dob"] = date
         profile["sign"] = getZodiacSign(dob: date)
+//        print(getZodiacSign(dob: date))
         profile["likes"] = Array<String>()
         profile["dislikes"] = Array<String>()
         profile["matches"] = 0
@@ -187,6 +201,7 @@ class RegistrationScreenController: UIViewController, UIImagePickerControllerDel
         let calendar = Calendar.current
         var component = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: dob)
         component.year = 2020
+        print(Calendar.current.date(from: component)!)
         return zodiac.getSunSign(date: Calendar.current.date(from: component)!)
     }
     
