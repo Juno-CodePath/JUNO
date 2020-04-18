@@ -203,30 +203,32 @@ class HomeViewController: UIViewController {
         noButton.isEnabled = false
         yesButton.isEnabled = false
         
+        let otherProfile = self.profiles[self.count]
+        
         let id = PFUser.current()?.objectId
-        let likedUser = self.profiles[self.count]["owner"] as! PFObject
+        let likedUser = otherProfile["owner"] as! PFObject
         
         Global.shared.userProfile.add(likedUser.objectId, forKey: "likes")
         
-        let array = self.profiles[self.count]["likes"] as? Array<String>
+        let array = otherProfile["likes"] as? Array<String>
         if array!.contains(id!) {
             
             let match = PFObject(className: "Match")
           
-            match["profiles"] = [Global.shared.userProfile, self.profiles[self.count]] as Array<PFObject>
+            match["profiles"] = [Global.shared.userProfile, otherProfile] as Array<PFObject>
             match["messages"] = Array<String>()
             
             match.saveInBackground { (success, error) in
                 if success {
                     print("saved match")
                     
-                    let likedUserMatches = self.profiles[self.count]["matches"] as! Int
+                    let likedUserMatches = otherProfile["matches"] as! Int
                     let userMatches = Global.shared.userProfile["matches"] as! Int
                     
-                    self.profiles[self.count]["matches"] = likedUserMatches + 1
+                    otherProfile["matches"] = likedUserMatches + 1
                     Global.shared.userProfile["matches"] = userMatches + 1
                     
-                    self.profiles[self.count].saveInBackground()
+                    otherProfile.saveInBackground()
                     
                 } else {
                     print("error")

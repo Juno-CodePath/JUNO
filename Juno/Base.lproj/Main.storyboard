@@ -152,6 +152,7 @@
                         <outlet property="imageView" destination="sQZ-aj-B6V" id="yrh-uk-fBC"/>
                         <outlet property="nameField" destination="Hbx-w0-SfG" id="zns-DF-1Qc"/>
                         <outlet property="passwordField" destination="1G6-IO-gT5" id="wBE-2Y-ea9"/>
+                        <outlet property="signupButton" destination="Osb-uI-e1b" id="wpN-xi-R9B"/>
                         <outlet property="usernamefield" destination="mms-Td-WqF" id="Gmq-4b-eV9"/>
                         <segue destination="f0Y-fa-PjZ" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="rQG-F6-vBv"/>
                     </connections>
@@ -705,6 +706,6 @@
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QfT-Mr-3jO"/>
+        <segue reference="rQG-F6-vBv"/>
     </inferredMetricsTieBreakers>
 </document>

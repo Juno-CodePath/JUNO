@@ -53,6 +53,8 @@ class ChatTableViewController: UITableViewController, MessageInputBarDelegate {
             if match != nil {
                 self.match = match![0]
                 self.messages = match![0]["messages"] as! Array<PFObject>
+//                self.match.createdAt?.c
+//                self.messages.sort(by: { $0.createdAt!.compare($1.createdAt!) == .orderedAscending })
                 self.tableView.reloadData()
             } else {
                 print("not found")

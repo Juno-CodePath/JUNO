@@ -15,6 +15,7 @@ class RegistrationScreenController: UIViewController, UIImagePickerControllerDel
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var dobField: UITextField!
+    @IBOutlet weak var signupButton: UIButton!
     
     let datePicker = UIDatePicker()
     let manager = CLLocationManager()
@@ -25,6 +26,8 @@ class RegistrationScreenController: UIViewController, UIImagePickerControllerDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        signupButton.isEnabled = true
         
         manager.delegate = self
         
@@ -84,6 +87,9 @@ class RegistrationScreenController: UIViewController, UIImagePickerControllerDel
     }
     
     @IBAction func onSignup(_ sender: Any) {
+        
+        signupButton.isEnabled = false
+        
          let user = PFUser()
          user.username = usernamefield.text
          user.password = passwordField.text
