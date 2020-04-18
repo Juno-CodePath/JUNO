@@ -10,9 +10,16 @@ import UIKit
 
 class ChatCell: UITableViewCell {
     
-    @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var receivedView: UIView!
+    @IBOutlet weak var receivedImageView: UIImageView!
+    @IBOutlet weak var receivedMessageLabel: UILabel!
+    @IBOutlet weak var receivedTimeLabel: UILabel!
+    
+    @IBOutlet weak var sentView: UIView!
+    @IBOutlet weak var sentImageView: UIImageView!
+    @IBOutlet weak var sentMessageLabel: UILabel!
+    @IBOutlet weak var sentTimeLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

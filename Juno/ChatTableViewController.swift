@@ -53,8 +53,6 @@ class ChatTableViewController: UITableViewController, MessageInputBarDelegate {
             if match != nil {
                 self.match = match![0]
                 self.messages = match![0]["messages"] as! Array<PFObject>
-//                self.match.createdAt?.c
-//                self.messages.sort(by: { $0.createdAt!.compare($1.createdAt!) == .orderedAscending })
                 self.tableView.reloadData()
             } else {
                 print("not found")
@@ -104,18 +102,34 @@ class ChatTableViewController: UITableViewController, MessageInputBarDelegate {
         let author = messages[indexPath.row]["author"] as! PFUser
         var imageFile: PFFileObject!
         
+        cell.receivedView.isHidden = false
+        cell.sentView.isHidden = false
+        
         if author.objectId == PFUser.current()?.objectId {
+            
+            cell.receivedView.isHidden = true
+            
             imageFile = Global.shared.userProfile["profilePhoto"] as? PFFileObject
+            let urlString = imageFile.url!
+            let url = URL(string: urlString)!
+            
+            cell.sentImageView.af_setImage(withURL: url)
+            cell.sentMessageLabel.text = messages[indexPath.row]["text"] as? String
+            cell.sentMessageLabel.translatesAutoresizingMaskIntoConstraints = false
+            cell.sentTimeLabel.text = getRelativeTime(date: messages[indexPath.row].createdAt!)
         } else {
+            
+            cell.sentView.isHidden = true
+            
             imageFile = matchProfile["profilePhoto"] as? PFFileObject
+            let urlString = imageFile.url!
+            let url = URL(string: urlString)!
+            
+            cell.receivedImageView.af_setImage(withURL: url)
+            cell.receivedMessageLabel.text = messages[indexPath.row]["text"] as? String
+            cell.receivedMessageLabel.translatesAutoresizingMaskIntoConstraints = false
+            cell.receivedTimeLabel.text = getRelativeTime(date: messages[indexPath.row].createdAt!)
         }
-        
-        let urlString = imageFile.url!
-        let url = URL(string: urlString)!
-        
-        cell.profileImage.af_setImage(withURL: url)
-        cell.messageLabel.text = messages[indexPath.row]["text"] as? String
-        cell.timeLabel.text = getRelativeTime(date: messages[indexPath.row].createdAt!)
         
         return cell
     }
