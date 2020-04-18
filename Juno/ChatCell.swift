@@ -1,6 +1,6 @@
 //
 //  ChatCell.swift
-//  Juno
+//  Juno 
 //
 //  Created by Cicely Beckford on 4/15/20.
 //  Copyright © 2020 Cicely Beckford. All rights reserved.
