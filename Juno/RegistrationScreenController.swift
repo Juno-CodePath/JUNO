@@ -76,31 +76,30 @@ class RegistrationScreenController: UIViewController, UIImagePickerControllerDel
     }
     
     @IBAction func onSignup(_ sender: Any) {
-//         let user = PFUser()
-//         user.username = usernamefield.text
-//         user.password = passwordField.text
-//
-//         user.signUpInBackground { (success, error) in
-//             if success {
-//                self.createProfile()
-//                print("signup")
-////                self.performSegue(withIdentifier: "loginSegue", sender: nil)
-//             } else {
-//                print("Error: \(String(describing: error?.localizedDescription))")
-//             }
-//         }
-        
-        let username = usernamefield.text!
-        let password = passwordField.text!
+         let user = PFUser()
+         user.username = usernamefield.text
+         user.password = passwordField.text
 
-        PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
-            if user != nil {
-                self.getUserProfile()
-                self.performSegue(withIdentifier: "loginSegue", sender: nil)
-            } else {
-                print("Error: \(error?.localizedDescription)")
-            }
-        }
+         user.signUpInBackground { (success, error) in
+             if success {
+                self.createProfile()
+                print("signup")
+             } else {
+                print("Error: \(String(describing: error?.localizedDescription))")
+             }
+         }
+//
+//        let username = usernamefield.text!
+//        let password = passwordField.text!
+//
+//        PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
+//            if user != nil {
+//                self.getUserProfile()
+//                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+//            } else {
+//                print("Error: \(error?.localizedDescription)")
+//            }
+//        }
     }
     
     @objc func onTap(_ sender: Any) {

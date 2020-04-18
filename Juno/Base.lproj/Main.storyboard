@@ -631,7 +631,7 @@
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="onSignup:" destination="VO0-Rg-1Vr" eventType="touchUpInside" id="xT6-W1-Y4t"/>
-                                    <segue destination="3VL-8p-tpR" kind="presentation" modalPresentationStyle="fullScreen" id="O4k-S7-S70"/>
+                                    <segue destination="3VL-8p-tpR" kind="presentation" modalPresentationStyle="fullScreen" id="aFk-sJ-ft3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUO-Fy-bvs">
