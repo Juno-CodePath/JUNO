@@ -8,6 +8,7 @@ target 'Juno' do
   # Pods for Juno
   pod "Parse"
   pod "AlamofireImage"
+  pod "MessageInputBar"
 
   target 'JunoTests' do
     inherit! :search_paths
