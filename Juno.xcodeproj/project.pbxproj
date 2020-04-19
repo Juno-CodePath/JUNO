@@ -17,13 +17,15 @@
 		AE01404B24481B950043B802 /* MatchesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE01404A24481B950043B802 /* MatchesTableViewController.swift */; };
 		AE01404D24481C1E0043B802 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE01404C24481C1E0043B802 /* ChatCell.swift */; };
 		AE01404F24481C2D0043B802 /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE01404E24481C2D0043B802 /* MatchCell.swift */; };
+		AE7ECC4A244C47A0001E04CD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7ECC49244C47A0001E04CD /* HomeViewController.swift */; };
+		AE7ECC4C244C6574001E04CD /* KolodaPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7ECC4B244C6574001E04CD /* KolodaPhotoView.swift */; };
+		AE7ECC4E244C67AC001E04CD /* KolodaPhotoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE7ECC4D244C67AC001E04CD /* KolodaPhotoView.xib */; };
 		AEAC24142445466F0071791A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC24132445466F0071791A /* AppDelegate.swift */; };
 		AEAC241B2445466F0071791A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEAC24192445466F0071791A /* Main.storyboard */; };
 		AEAC241D244546710071791A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEAC241C244546710071791A /* Assets.xcassets */; };
 		AEAC2420244546710071791A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEAC241E244546710071791A /* LaunchScreen.storyboard */; };
 		AEAC242B244546720071791A /* JunoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC242A244546720071791A /* JunoTests.swift */; };
 		AEAC2436244546720071791A /* JunoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC2435244546720071791A /* JunoUITests.swift */; };
-		AEAC2444244549A60071791A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC2443244549A60071791A /* HomeViewController.swift */; };
 		AEAC24462446CA9E0071791A /* Zodiac.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC24452446CA9E0071791A /* Zodiac.swift */; };
 		AEC80E9024470443009AA8BA /* RegistrationScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC80E8F24470443009AA8BA /* RegistrationScreenController.swift */; };
 		C1C31909244CE330401D1540 /* Pods_Juno.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9A0E5CE3F413637D2EC758A /* Pods_Juno.framework */; };
@@ -62,6 +64,9 @@
 		AE01404A24481B950043B802 /* MatchesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesTableViewController.swift; sourceTree = "<group>"; };
 		AE01404C24481C1E0043B802 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		AE01404E24481C2D0043B802 /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
+		AE7ECC49244C47A0001E04CD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AE7ECC4B244C6574001E04CD /* KolodaPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KolodaPhotoView.swift; sourceTree = "<group>"; };
+		AE7ECC4D244C67AC001E04CD /* KolodaPhotoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KolodaPhotoView.xib; sourceTree = "<group>"; };
 		AEAC24102445466F0071791A /* Juno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Juno.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEAC24132445466F0071791A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEAC241A2445466F0071791A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,7 +79,6 @@
 		AEAC2431244546720071791A /* JunoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JunoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEAC2435244546720071791A /* JunoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JunoUITests.swift; sourceTree = "<group>"; };
 		AEAC2437244546720071791A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AEAC2443244549A60071791A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AEAC24452446CA9E0071791A /* Zodiac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zodiac.swift; sourceTree = "<group>"; };
 		AEC80E8F24470443009AA8BA /* RegistrationScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationScreenController.swift; sourceTree = "<group>"; };
 		D9A0E5CE3F413637D2EC758A /* Pods_Juno.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Juno.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,7 +153,7 @@
 				AEAC241C244546710071791A /* Assets.xcassets */,
 				AEAC241E244546710071791A /* LaunchScreen.storyboard */,
 				AEAC2421244546710071791A /* Info.plist */,
-				AEAC2443244549A60071791A /* HomeViewController.swift */,
+				AE7ECC49244C47A0001E04CD /* HomeViewController.swift */,
 				149D9C2D244564400004F77F /* ProfileViewController.swift */,
 				149D9C2F2446551D0004F77F /* SettingsViewController.swift */,
 				149D9C31244674C00004F77F /* LoginViewController.swift */,
@@ -160,6 +164,8 @@
 				AE01404A24481B950043B802 /* MatchesTableViewController.swift */,
 				AE01404C24481C1E0043B802 /* ChatCell.swift */,
 				AE01404E24481C2D0043B802 /* MatchCell.swift */,
+				AE7ECC4B244C6574001E04CD /* KolodaPhotoView.swift */,
+				AE7ECC4D244C67AC001E04CD /* KolodaPhotoView.xib */,
 			);
 			path = Juno;
 			sourceTree = "<group>";
@@ -307,6 +313,7 @@
 				AEAC2420244546710071791A /* LaunchScreen.storyboard in Resources */,
 				AEAC241D244546710071791A /* Assets.xcassets in Resources */,
 				AEAC241B2445466F0071791A /* Main.storyboard in Resources */,
+				AE7ECC4E244C67AC001E04CD /* KolodaPhotoView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,16 +442,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				149D9C2E244564400004F77F /* ProfileViewController.swift in Sources */,
+				AE7ECC4C244C6574001E04CD /* KolodaPhotoView.swift in Sources */,
 				AEC80E9024470443009AA8BA /* RegistrationScreenController.swift in Sources */,
 				AE01404D24481C1E0043B802 /* ChatCell.swift in Sources */,
 				AE01404F24481C2D0043B802 /* MatchCell.swift in Sources */,
 				AEAC24142445466F0071791A /* AppDelegate.swift in Sources */,
 				AE01404B24481B950043B802 /* MatchesTableViewController.swift in Sources */,
 				AE01404924481A2E0043B802 /* ChatTableViewController.swift in Sources */,
-				AEAC2444244549A60071791A /* HomeViewController.swift in Sources */,
 				149D9C32244674C00004F77F /* LoginViewController.swift in Sources */,
 				149D9C302446551D0004F77F /* SettingsViewController.swift in Sources */,
 				AE0140452447F0EA0043B802 /* Global.swift in Sources */,
+				AE7ECC4A244C47A0001E04CD /* HomeViewController.swift in Sources */,
 				AEAC24462446CA9E0071791A /* Zodiac.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

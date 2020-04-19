@@ -3,6 +3,8 @@ PODS:
   - AlamofireImage (3.6.0):
     - Alamofire (~> 4.9)
   - Bolts/Tasks (1.9.0)
+  - Koloda (5.0.1):
+    - pop (~> 1.0)
   - MessageInputBar (0.4.1):
     - MessageInputBar/Core (= 0.4.1)
   - MessageInputBar/Core (0.4.1)
@@ -10,9 +12,11 @@ PODS:
     - Parse/Core (= 1.17.3)
   - Parse/Core (1.17.3):
     - Bolts/Tasks (~> 1.9)
+  - pop (1.0.12)
 
 DEPENDENCIES:
   - AlamofireImage
+  - Koloda
   - MessageInputBar
   - Parse
 
@@ -21,16 +25,20 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - Bolts
+    - Koloda
     - MessageInputBar
     - Parse
+    - pop
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  Koloda: d07b9199a383abc5898b62aa945a599f5e7c0c4b
   MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
   Parse: c1ad2a04d2cab2b54b6fb7da05f741abf2cf57d1
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
 
-PODFILE CHECKSUM: eea38f4d44d55a9ac5edf7df5476da275bf2a1fe
+PODFILE CHECKSUM: dafc4ef9b23fd33651e5142d5f5a48bcf53e773b
 
 COCOAPODS: 1.9.0

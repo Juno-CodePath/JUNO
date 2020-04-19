@@ -1,21 +1,18 @@
 //
-//  HomeViewController.swift
+//  nHomeViewController.swift
 //  Juno
 //
-//  Created by Cicely Beckford on 4/13/20.
+//  Created by Cicely Beckford on 4/19/20.
 //  Copyright © 2020 Cicely Beckford. All rights reserved.
 //
 
 import UIKit
 import Parse
-import AlamofireImage
+import Koloda
 
-class HomeViewController: UIViewController {
-    
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var compatibilityLabel: UILabel!
+class HomeViewController: UIViewController, KolodaViewDataSource, KolodaViewDelegate {
+
+    @IBOutlet weak var kolodaView: KolodaView!
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var yesButton: UIButton!
     
@@ -25,19 +22,25 @@ class HomeViewController: UIViewController {
     
     var numberofProfile: Int!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        numberofProfile = 0
-        
-        noButton.isEnabled = false
-        yesButton.isEnabled = false
-        
-        loadProfiles()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        numberofProfile = 0
+        
+        kolodaView.dataSource = self
+        kolodaView.delegate = self
+        
+        kolodaView.appearanceAnimationDuration = 0.1
+        
+        loadProfiles()
+        
+        self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        kolodaView.resetCurrentCardIndex()
+        loadProfiles()
     }
     
     func loadProfiles() {
@@ -47,163 +50,70 @@ class HomeViewController: UIViewController {
         query.includeKeys(["owner", "likes", "dislikes", "matches"])
         query.limit = numberofProfile
         
+        let subquery = PFQuery(className: "Profile")
+        subquery.whereKey("dislikes", containsAllObjectsIn: [PFUser.current()?.objectId])
+        
+        query.whereKey("owner", notEqualTo: PFUser.current()?.objectId)
+        query.whereKey("owner", notContainedIn: Global.shared.userProfile!["dislikes"] as! [Any])
+        query.whereKey("owner", notContainedIn: Global.shared.userProfile!["likes"] as! [Any])
+        query.whereKey("objectId", doesNotMatchKey: "objectId", in: subquery)
+        
+        
         query.findObjectsInBackground { (profs, error) in
             if profs != nil {
                 self.profiles = profs!
-                
-                if self.count >= self.profiles.count {
-                    print("max")
-                    self.setBackground()
-                    self.setAlert()
-                } else {
-                    print("call set again")
-                    self.setData()
-                }
+                self.kolodaView.reloadData()
             }
         }
     }
     
-    func setAlert() {
-        
-        let alert = UIAlertController(title: "Oh No!", message: "No more profiles.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: {
-            action in alert.dismiss(animated: true, completion: nil)
-        }))
-        self.present(alert, animated: true, completion: nil)
-        
-        noButton.isEnabled = false
-        yesButton.isEnabled = false
-    }
-    
-    func setBackground() {
-        print("setbg")
-        var location: PFGeoPoint = PFGeoPoint()
-        let profile = profiles[profiles.count - 1]
-        
-        let imageFile = profile["profilePhoto"] as! PFFileObject
-        let urlString = imageFile.url!
-        let url = URL(string: urlString)!
-        
-        imageView.af_setImage(withURL: url)
-        
-        nameLabel.text = profile["name"] as? String
-        
-        location = profile["location"] as! PFGeoPoint
-        getAddress(location)
-        compatibilityLabel.text = zodiac.getCompatibility(first: Global.shared.userProfile["sign"] as! String, second: profile["sign"] as! String)
-    }
-    
-    func setData() {
-        
-        updateCount()
-        if count >= profiles.count {
-            print("loadprofilecall")
-            loadProfiles()
-            return
-        }
-        
-        noButton.isEnabled = true
-        yesButton.isEnabled = true
-        
-        var location: PFGeoPoint = PFGeoPoint()
-        let profile = profiles[count]
-        
-        let imageFile = profile["profilePhoto"] as! PFFileObject
-        let urlString = imageFile.url!
-        let url = URL(string: urlString)!
-        
-        imageView.af_setImage(withURL: url)
-        
-        nameLabel.text = profile["name"] as? String
-        
-        location = profile["location"] as! PFGeoPoint
-        getAddress(location)
-        compatibilityLabel.text = zodiac.getCompatibility(first: Global.shared.userProfile["sign"] as! String, second: profile["sign"] as! String)
-    }
-    
-    func updateCount() {
-        
-        let id = PFUser.current()?.objectId!
-
-        while count < profiles.count {
-            let dislikesArray = profiles[count]["dislikes"] as? Array<String>
-            
-            let userLikes = Global.shared.userProfile["likes"] as? Array<String>
-            let userDislikes = Global.shared.userProfile["dislikes"] as? Array<String>
-            
-            let user = profiles[count]["owner"] as! PFObject
-            
-            if dislikesArray!.contains(id!) {
-                count += 1
-            } else if userLikes!.contains(user.objectId!) {
-                count += 1
-            } else if userDislikes!.contains(user.objectId!) {
-                count += 1
-            } else if id!.elementsEqual(user.objectId!) {
-                count += 1
-            } else {
-                break
-            }
-            print(count)
-        }
-    }
-    
-    func getAddress(_ location: PFGeoPoint){
+    func getAddress(_ location: PFGeoPoint, completion: @escaping (_ answer: String?) -> Void){
         
         let loc: CLLocation = CLLocation(latitude:location.latitude, longitude: location.longitude)
 
 
         CLGeocoder().reverseGeocodeLocation(loc, completionHandler:{ (placemarks, error) in
-                if (error != nil) {
-                    print("reverse geodcode fail: \(error!.localizedDescription)")
-                }
+            if (error != nil) {
+                print("reverse geodcode fail: \(error!.localizedDescription)")
+            } else {
+                
                 let pm = placemarks! as [CLPlacemark]
 
                 if pm.count > 0 {
                     let pm = placemarks![0]
-                    
+
                     var addressString : String = ""
-                    
+
                     if pm.subLocality != nil {
-                        addressString = addressString + pm.subLocality! + ", "
+                      addressString = addressString + pm.subLocality! + ", "
                     }
                     if pm.locality != nil {
-                        addressString = addressString + pm.locality! + ", "
+                      addressString = addressString + pm.locality! + ", "
                     }
                     if pm.country != nil {
-                        addressString = addressString + pm.country! + " "
+                      addressString = addressString + pm.country! + " "
                     }
-
-                    self.addressLabel.text = addressString
-              }
+                    completion(addressString)
+                }
+            }
         })
     }
     
-    @IBAction func onNo(_ sender: Any) {
-        
+    func swipeLeft(_ index: Int) {
         noButton.isEnabled = false
         yesButton.isEnabled = false
         
-        let likedUser = self.profiles[self.count]["owner"] as! PFObject
+        let likedUser = self.profiles[index]["owner"] as! PFObject
         
         Global.shared.userProfile.add(likedUser.objectId, forKey: "dislikes")
-        
-        Global.shared.userProfile.saveInBackground { (success, error) in
-            if success {
-                print("on no call setdata")
-                self.setData()
-            } else {
-                print("Error saving")
-            }
-        }
+        Global.shared.userProfile.saveInBackground()
     }
     
-    @IBAction func onYes(_ sender: Any) {
-        
+    func swipeRight(_ index: Int) {
         noButton.isEnabled = false
         yesButton.isEnabled = false
         
-        let otherProfile = self.profiles[self.count]
+        let otherProfile = self.profiles[index]
         
         let id = PFUser.current()?.objectId
         let likedUser = otherProfile["owner"] as! PFObject
@@ -236,24 +146,76 @@ class HomeViewController: UIViewController {
             }
         }
         
-        Global.shared.userProfile.saveInBackground { (success, error) in
-            if success {
-                print("on yes call setdata")
-                self.setData()
-            } else {
-                print("Error saving")
-            }
+        Global.shared.userProfile.saveInBackground ()
+    }
+    
+    func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
+        
+        let profile = profiles[index]
+        
+        let cardView = Bundle.main.loadNibNamed("KolodaPhotoView", owner: self, options: nil)![0] as? KolodaPhotoView
+        
+        let imageFile = profile["profilePhoto"] as! PFFileObject
+        let urlString = imageFile.url!
+        let url = URL(string: urlString)!
+        
+        let location = profile["location"] as! PFGeoPoint
+        let dob = profile["dob"] as! Date
+        
+        getAddress(location) { (address) in
+            cardView!.addressLabel.text = address
+        }
+        
+        cardView!.imageView.af_setImage(withURL: url)
+        cardView!.nameLabel.text = (profile["name"] as? String)! + ", " + String(dob.age)
+        cardView!.compatibilityLabel.text = zodiac.getCompatibility(first: Global.shared.userProfile["sign"] as! String, second: profile["sign"] as! String)
+        
+        return cardView!
+    }
+    
+    func kolodaViewForCardOverlayAtIndex(koloda: KolodaView, index: UInt) -> OverlayView? {
+        return Bundle.main.loadNibNamed("OverlayView", owner: self, options: nil)![0] as? OverlayView
+    }
+    
+    func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
+        if direction == .right {
+            swipeRight(index)
+        } else {
+            swipeLeft(index)
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func onNo(_ sender: Any) {
+        kolodaView?.swipe(SwipeResultDirection.left)
     }
-    */
+    
+    @IBAction func onYes(_ sender: Any) {
+        kolodaView?.swipe(SwipeResultDirection.right)
+    }
+    
+    func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
+        profiles.count
+    }
+    
+    func kolodaDidSwipedCardAtIndex(koloda: KolodaView, index: UInt, direction: SwipeResultDirection) {
+        
+        if index + 1 == profiles.count {
+            loadProfiles()
+        }
+    }
+    
+    func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
+        let alert = UIAlertController(title: "Oh No!", message: "No more profiles.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: {
+            action in alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
+        yesButton.isEnabled = false
+        noButton.isEnabled = false
+    }
 
+}
+extension Date {
+    var age: Int { Calendar.current.dateComponents([.year], from: self, to: Date()).year! }
 }
