@@ -10,6 +10,7 @@ import UIKit
 import AlamofireImage
 import Parse
 
+
 class LoginViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     
@@ -26,7 +27,8 @@ class LoginViewController: UIViewController {
         
         PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
             if user != nil {
-                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                self.getUserProfile()
+//                self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
                 print("Error: \(error?.localizedDescription)")
             }
@@ -45,7 +47,23 @@ class LoginViewController: UIViewController {
                 print("Error: \(error?.localizedDescription)")
             }
         }
-        tempRegistration()
+        //tempRegistration()
+    }
+    
+    func getUserProfile() {
+        
+        let user = PFUser.current()
+        let query = PFQuery(className: "Profile")
+        query.includeKey("owner")
+        
+        query.whereKey("owner", equalTo: user).findObjectsInBackground{(prof, error) in
+            if prof != nil {
+                Global.shared.userProfile = prof![0]
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            } else {
+                print("no posts")
+            }
+        }
     }
     
     func tempRegistration() {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VO0-Rg-1Vr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VO0-Rg-1Vr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -242,7 +242,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PFb-ry-1d4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="541" y="1939"/>
+            <point key="canvasLocation" x="-307" y="1939"/>
         </scene>
         <!--Chat Table View Controller-->
         <scene sceneID="64P-lu-a9v">
@@ -385,7 +385,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOW-kf-16e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1292.753623188406" y="1938.6160714285713"/>
+            <point key="canvasLocation" x="506" y="1939"/>
         </scene>
         <!--Home-->
         <scene sceneID="5ZQ-Wm-htS">
@@ -457,7 +457,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ny-Ke-5dH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1401" y="1187"/>
+            <point key="canvasLocation" x="-1236" y="1126"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="bvb-GH-Q9J">
@@ -495,7 +495,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5MA-nU-f13" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="542" y="1201"/>
+            <point key="canvasLocation" x="-307" y="1126"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="gDg-Iy-TyW">
@@ -560,9 +560,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="joe" translatesAutoresizingMaskIntoConstraints="NO" id="LNB-qI-MhC">
-                                <rect key="frame" x="110" y="136" width="200" height="200"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap to change photo." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m36-Ud-SIC">
+                                <rect key="frame" x="129" y="326" width="162" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" staticText="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.crop.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LNB-qI-MhC">
+                                <rect key="frame" x="107" y="118" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                </accessibility>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="oto-U4-UBO" appends="YES" id="PW3-z6-5JL"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -582,6 +600,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="aboutMeField" destination="FdM-ud-wU3" id="0Fc-2q-OVt"/>
+                        <outlet property="changePhotoLabel" destination="m36-Ud-SIC" id="K4E-mP-6kA"/>
                         <outlet property="companySchoolField" destination="a2H-Bu-0hR" id="05B-BJ-wix"/>
                         <outlet property="editItem" destination="Zwx-IV-5Ec" id="G3u-xv-mST"/>
                         <outlet property="nameLabel" destination="bxZ-fY-j0h" id="5sv-bF-Fga"/>
@@ -592,8 +611,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gOe-pU-d5Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="oto-U4-UBO">
+                    <connections>
+                        <action selector="onPhotoButton:" destination="c3n-65-hMg" id="ftf-tx-Tup"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-3383" y="1227"/>
+            <point key="canvasLocation" x="-2048" y="1126"/>
         </scene>
         <!--Settings-->
         <scene sceneID="a6x-ak-ZyP">
@@ -621,7 +645,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1mY-0s-DNe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="sFw-zu-o5g" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2597" y="1939"/>
+            <point key="canvasLocation" x="-1639" y="1939"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="B2z-5b-vXj">
@@ -704,7 +728,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UdM-OG-1sz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4228" y="1227"/>
+            <point key="canvasLocation" x="-2839" y="1126"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CyB-UG-neV">
@@ -722,23 +746,23 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbE-0K-TPY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3384" y="1939"/>
+            <point key="canvasLocation" x="-2481" y="1939"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="checkmark" catalog="system" width="64" height="56"/>
-        <image name="gear" catalog="system" width="64" height="58"/>
-        <image name="house" catalog="system" width="64" height="54"/>
-        <image name="house.fill" catalog="system" width="64" height="52"/>
-        <image name="joe" width="183" height="275"/>
-        <image name="message" catalog="system" width="64" height="56"/>
-        <image name="message.fill" catalog="system" width="64" height="56"/>
-        <image name="person" catalog="system" width="64" height="58"/>
-        <image name="person.fill" catalog="system" width="64" height="60"/>
-        <image name="square.and.pencil" catalog="system" width="64" height="58"/>
-        <image name="xmark" catalog="system" width="64" height="56"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="rQG-F6-vBv"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="message" catalog="system" width="128" height="113"/>
+        <image name="message.fill" catalog="system" width="128" height="113"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.crop.square" catalog="system" width="128" height="114"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="118"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+    </resources>
 </document>
