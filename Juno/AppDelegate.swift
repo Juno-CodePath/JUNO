@@ -25,8 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         )
         
         if PFUser.current() != nil {
-            
-            getUserProfile()
             let main = UIStoryboard(name: "Main", bundle: nil)
             let appTabBarController = main.instantiateViewController(withIdentifier: "AppTabBarController")
             
@@ -34,21 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
-    }
-    
-    func getUserProfile() {
-
-        let user = PFUser.current()
-        let query = PFQuery(className: "Profile")
-        query.includeKey("owner")
-
-        query.whereKey("owner", equalTo: user).findObjectsInBackground{(prof, error) in
-            if prof != nil {
-                Global.shared.userProfile = prof![0]
-            } else {
-                print("no posts")
-            }
-        }
     }
 
    func applicationWillResignActive(_ application: UIApplication) {
