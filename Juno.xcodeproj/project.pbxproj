@@ -10,13 +10,9 @@
 		149D9C2E244564400004F77F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D9C2D244564400004F77F /* ProfileViewController.swift */; };
 		149D9C302446551D0004F77F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D9C2F2446551D0004F77F /* SettingsViewController.swift */; };
 		149D9C32244674C00004F77F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D9C31244674C00004F77F /* LoginViewController.swift */; };
-		687FF911D3F2DEA22D350C11 /* Pods_Juno_JunoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8372FCE47A722675EEFF5677 /* Pods_Juno_JunoUITests.framework */; };
-		96E1161C78B25614BC19C038 /* Pods_JunoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A0BD24A11BB0CADC12B3BF /* Pods_JunoTests.framework */; };
-		AE0140452447F0EA0043B802 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0140442447F0EA0043B802 /* Global.swift */; };
-		AE01404924481A2E0043B802 /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE01404824481A2E0043B802 /* ChatTableViewController.swift */; };
-		AE01404B24481B950043B802 /* MatchesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE01404A24481B950043B802 /* MatchesTableViewController.swift */; };
-		AE01404D24481C1E0043B802 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE01404C24481C1E0043B802 /* ChatCell.swift */; };
-		AE01404F24481C2D0043B802 /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE01404E24481C2D0043B802 /* MatchCell.swift */; };
+		149D9C38244910DA0004F77F /* Pods_Juno.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9A0E5CE3F413637D2EC758A /* Pods_Juno.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		38BFE1C4659D15790CFF2ED4 /* Pods_Juno.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E783D105A3D8D14B682BC073 /* Pods_Juno.framework */; };
+		89F1D4136A0C838845F5D827 /* Pods_JunoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9805BA64C993301FD47BD38 /* Pods_JunoTests.framework */; };
 		AEAC24142445466F0071791A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC24132445466F0071791A /* AppDelegate.swift */; };
 		AEAC241B2445466F0071791A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEAC24192445466F0071791A /* Main.storyboard */; };
 		AEAC241D244546710071791A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEAC241C244546710071791A /* Assets.xcassets */; };
@@ -24,9 +20,7 @@
 		AEAC242B244546720071791A /* JunoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC242A244546720071791A /* JunoTests.swift */; };
 		AEAC2436244546720071791A /* JunoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC2435244546720071791A /* JunoUITests.swift */; };
 		AEAC2444244549A60071791A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC2443244549A60071791A /* HomeViewController.swift */; };
-		AEAC24462446CA9E0071791A /* Zodiac.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC24452446CA9E0071791A /* Zodiac.swift */; };
-		AEC80E9024470443009AA8BA /* RegistrationScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC80E8F24470443009AA8BA /* RegistrationScreenController.swift */; };
-		C1C31909244CE330401D1540 /* Pods_Juno.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9A0E5CE3F413637D2EC758A /* Pods_Juno.framework */; };
+		AEED905DB2A0524433140960 /* Pods_Juno_JunoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9186CFE2EFB3E52BA38A2E /* Pods_Juno_JunoUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,22 +40,33 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		149D9C36244910D20004F77F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				149D9C38244910DA0004F77F /* Pods_Juno.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		149D9C2D244564400004F77F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		149D9C2F2446551D0004F77F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		149D9C31244674C00004F77F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		149D9C33244910D10004F77F /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		149D9C39244912110004F77F /* Parse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Parse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		149D9C3C2449137A0004F77F /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		149D9C3F244914FD0004F77F /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E47DD90AC83BBC6369A9705 /* Pods-Juno.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Juno.release.xcconfig"; path = "Target Support Files/Pods-Juno/Pods-Juno.release.xcconfig"; sourceTree = "<group>"; };
 		24BFFB04CABE8D8608F8D666 /* Pods-JunoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JunoTests.release.xcconfig"; path = "Target Support Files/Pods-JunoTests/Pods-JunoTests.release.xcconfig"; sourceTree = "<group>"; };
 		33AA073D0ABD0D8A020A1DF9 /* Pods-Juno.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Juno.debug.xcconfig"; path = "Target Support Files/Pods-Juno/Pods-Juno.debug.xcconfig"; sourceTree = "<group>"; };
 		4BEBD89BAE66F44A83CD5239 /* Pods-Juno-JunoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Juno-JunoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Juno-JunoUITests/Pods-Juno-JunoUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		61A0BD24A11BB0CADC12B3BF /* Pods_JunoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JunoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62391B20F4CB71B8A52ACC58 /* Pods-JunoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JunoTests.debug.xcconfig"; path = "Target Support Files/Pods-JunoTests/Pods-JunoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8372FCE47A722675EEFF5677 /* Pods_Juno_JunoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Juno_JunoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE0140442447F0EA0043B802 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
-		AE01404824481A2E0043B802 /* ChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
-		AE01404A24481B950043B802 /* MatchesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesTableViewController.swift; sourceTree = "<group>"; };
-		AE01404C24481C1E0043B802 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
-		AE01404E24481C2D0043B802 /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
 		AEAC24102445466F0071791A /* Juno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Juno.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEAC24132445466F0071791A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEAC241A2445466F0071791A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -75,10 +80,11 @@
 		AEAC2435244546720071791A /* JunoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JunoUITests.swift; sourceTree = "<group>"; };
 		AEAC2437244546720071791A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEAC2443244549A60071791A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		AEAC24452446CA9E0071791A /* Zodiac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zodiac.swift; sourceTree = "<group>"; };
-		AEC80E8F24470443009AA8BA /* RegistrationScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationScreenController.swift; sourceTree = "<group>"; };
+		B9805BA64C993301FD47BD38 /* Pods_JunoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JunoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9A0E5CE3F413637D2EC758A /* Pods_Juno.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Juno.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E783D105A3D8D14B682BC073 /* Pods_Juno.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Juno.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1DBA238BFA09B4D460E1B1 /* Pods-Juno-JunoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Juno-JunoUITests.release.xcconfig"; path = "Target Support Files/Pods-Juno-JunoUITests/Pods-Juno-JunoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FD9186CFE2EFB3E52BA38A2E /* Pods_Juno_JunoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Juno_JunoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1C31909244CE330401D1540 /* Pods_Juno.framework in Frameworks */,
+				38BFE1C4659D15790CFF2ED4 /* Pods_Juno.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96E1161C78B25614BC19C038 /* Pods_JunoTests.framework in Frameworks */,
+				89F1D4136A0C838845F5D827 /* Pods_JunoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,19 +108,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				687FF911D3F2DEA22D350C11 /* Pods_Juno_JunoUITests.framework in Frameworks */,
+				AEED905DB2A0524433140960 /* Pods_Juno_JunoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4D9670CEDBC347405DCF4A1F /* Frameworks */ = {
+		149D9C422449154C0004F77F /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
 				D9A0E5CE3F413637D2EC758A /* Pods_Juno.framework */,
-				8372FCE47A722675EEFF5677 /* Pods_Juno_JunoUITests.framework */,
-				61A0BD24A11BB0CADC12B3BF /* Pods_JunoTests.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		4D9670CEDBC347405DCF4A1F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				149D9C3F244914FD0004F77F /* Alamofire.framework */,
+				149D9C3C2449137A0004F77F /* Alamofire.framework */,
+				149D9C39244912110004F77F /* Parse.framework */,
+				149D9C33244910D10004F77F /* AlamofireImage.framework */,
+				E783D105A3D8D14B682BC073 /* Pods_Juno.framework */,
+				FD9186CFE2EFB3E52BA38A2E /* Pods_Juno_JunoUITests.framework */,
+				B9805BA64C993301FD47BD38 /* Pods_JunoTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -128,6 +146,7 @@
 				AEAC24112445466F0071791A /* Products */,
 				D07E3F7F185679230A8ABB05 /* Pods */,
 				4D9670CEDBC347405DCF4A1F /* Frameworks */,
+				149D9C422449154C0004F77F /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,13 +172,6 @@
 				149D9C2D244564400004F77F /* ProfileViewController.swift */,
 				149D9C2F2446551D0004F77F /* SettingsViewController.swift */,
 				149D9C31244674C00004F77F /* LoginViewController.swift */,
-				AE0140442447F0EA0043B802 /* Global.swift */,
-				AEAC24452446CA9E0071791A /* Zodiac.swift */,
-				AEC80E8F24470443009AA8BA /* RegistrationScreenController.swift */,
-				AE01404824481A2E0043B802 /* ChatTableViewController.swift */,
-				AE01404A24481B950043B802 /* MatchesTableViewController.swift */,
-				AE01404C24481C1E0043B802 /* ChatCell.swift */,
-				AE01404E24481C2D0043B802 /* MatchCell.swift */,
 			);
 			path = Juno;
 			sourceTree = "<group>";
@@ -206,7 +218,8 @@
 				AEAC240C2445466F0071791A /* Sources */,
 				AEAC240D2445466F0071791A /* Frameworks */,
 				AEAC240E2445466F0071791A /* Resources */,
-				2777AAA9AB0AC781E9469D47 /* [CP] Embed Pods Frameworks */,
+				149D9C36244910D20004F77F /* Embed Frameworks */,
+				0107ABF81526680CFB3E2E15 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -244,7 +257,7 @@
 				AEAC242D244546720071791A /* Sources */,
 				AEAC242E244546720071791A /* Frameworks */,
 				AEAC242F244546720071791A /* Resources */,
-				70B7410F156B84CDDC9F2224 /* [CP] Embed Pods Frameworks */,
+				6D2FCFA3EEF1FCDABB60A75C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -327,6 +340,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0107ABF81526680CFB3E2E15 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Juno/Pods-Juno-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Juno/Pods-Juno-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Juno/Pods-Juno-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		0E08C76F0A7095B72D5E0CD0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -349,24 +379,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2777AAA9AB0AC781E9469D47 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Juno/Pods-Juno-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Juno/Pods-Juno-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Juno/Pods-Juno-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		70B7410F156B84CDDC9F2224 /* [CP] Embed Pods Frameworks */ = {
+		6D2FCFA3EEF1FCDABB60A75C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -435,17 +448,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				149D9C2E244564400004F77F /* ProfileViewController.swift in Sources */,
-				AEC80E9024470443009AA8BA /* RegistrationScreenController.swift in Sources */,
-				AE01404D24481C1E0043B802 /* ChatCell.swift in Sources */,
-				AE01404F24481C2D0043B802 /* MatchCell.swift in Sources */,
 				AEAC24142445466F0071791A /* AppDelegate.swift in Sources */,
-				AE01404B24481B950043B802 /* MatchesTableViewController.swift in Sources */,
-				AE01404924481A2E0043B802 /* ChatTableViewController.swift in Sources */,
 				AEAC2444244549A60071791A /* HomeViewController.swift in Sources */,
 				149D9C32244674C00004F77F /* LoginViewController.swift in Sources */,
 				149D9C302446551D0004F77F /* SettingsViewController.swift in Sources */,
-				AE0140452447F0EA0043B802 /* Global.swift in Sources */,
-				AEAC24462446CA9E0071791A /* Zodiac.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,16 +625,17 @@
 			baseConfigurationReference = 33AA073D0ABD0D8A020A1DF9 /* Pods-Juno.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7A2HRJ39PG;
+				DEVELOPMENT_TEAM = 347L45YBGH;
 				INFOPLIST_FILE = Juno/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Cmp.Juno;
+				PRODUCT_BUNDLE_IDENTIFIER = Cmp.JunoCodepath;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -639,16 +646,17 @@
 			baseConfigurationReference = 1E47DD90AC83BBC6369A9705 /* Pods-Juno.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7A2HRJ39PG;
+				DEVELOPMENT_TEAM = 347L45YBGH;
 				INFOPLIST_FILE = Juno/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Cmp.Juno;
+				PRODUCT_BUNDLE_IDENTIFIER = Cmp.JunoCodepath;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
