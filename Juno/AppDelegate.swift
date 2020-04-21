@@ -24,14 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         )
         
-//        if PFUser.current() != nil {
-//            
-//            getUserProfile()
-//            let main = UIStoryboard(name: "Main", bundle: nil)
-//            let appTabBarController = main.instantiateViewController(withIdentifier: "AppTabBarController")
-//            
-//            window?.rootViewController = appTabBarController
-//        }
+        if PFUser.current() != nil {
+            
+            getUserProfile()
+            
+        }
         
         return true
     }
@@ -45,6 +42,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         query.whereKey("owner", equalTo: user).findObjectsInBackground{(prof, error) in
             if prof != nil {
                 Global.shared.userProfile = prof![0]
+                
+                let main = UIStoryboard(name: "Main", bundle: nil)
+                let appTabBarController = main.instantiateViewController(withIdentifier: "AppTabBarController")
+
+                self.window?.rootViewController = appTabBarController
+                
             } else {
                 print("no posts")
             }
