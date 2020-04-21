@@ -297,6 +297,5 @@ Juno is an online dating app that displays user compatibility based on their sun
 <img src='http://g.recordit.co/HJEobQ39go.gif' title='Video Walkthrough' width='300' height='600' alt='Video Walkthrough' /><img src='http://g.recordit.co/H71L1QauWm.gif' title='Video Walkthrough' width='300' height='600' alt='Video Walkthrough' /><img src='http://g.recordit.co/F3rzkHstbS.gif' title='Video Walkthrough' width='300' height='600' alt='Video Walkthrough' />
 
 ### Milestone 2
-<img src='http://g.recordit.co/JTbN31Ee9P.gif' title='Video Walkthrough' width='300' height='600' alt='Video Walkthrough' />
-<img src='http://g.recordit.co/lCJpjmweTB.gif' title='Video Walkthrough' width='300' height='600' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/JTbN31Ee9P.gif' title='Video Walkthrough' width='300' height='600' alt='Video Walkthrough' /><img src='http://g.recordit.co/lCJpjmweTB.gif' title='Video Walkthrough' width='300' height='600' alt='Video Walkthrough' />
 
