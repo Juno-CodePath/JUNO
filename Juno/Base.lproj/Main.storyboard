@@ -751,7 +751,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle=" " id="zCH-qn-n6B">
+                            <tableViewSection id="zCH-qn-n6B">
                                 <cells/>
                             </tableViewSection>
                         </sections>
@@ -772,10 +772,10 @@
             </objects>
             <point key="canvasLocation" x="-1236.231884057971" y="1972.7678571428571"/>
         </scene>
-        <!--Login View Controller-->
+        <!--LoginViewController-->
         <scene sceneID="B2z-5b-vXj">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="VO0-Rg-1Vr" customClass="LoginViewController" customModule="Juno" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" title="LoginViewController" id="VO0-Rg-1Vr" customClass="LoginViewController" customModule="Juno" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wsf-aA-xdL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -873,10 +873,11 @@
             </objects>
             <point key="canvasLocation" x="-2839" y="1126"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Settings-->
         <scene sceneID="MJr-E5-qZO">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="shE-t5-GlQ" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Y5-jz-zLr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController title="Settings" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="shE-t5-GlQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pit-P2-XEs">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -887,7 +888,6 @@
                         <segue destination="blz-B8-Ygx" kind="relationship" relationship="rootViewController" id="HgB-tV-3ew"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Y5-jz-zLr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2146.376811594203" y="1972.7678571428571"/>
         </scene>
