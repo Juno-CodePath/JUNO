@@ -10,10 +10,18 @@ import UIKit
 import Parse
 
 class SettingsTableViewController: UITableViewController {
-
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var distanceSlider: UISlider!
+    @IBOutlet weak var distanceLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        emailLabel.text = PFUser.current()?.email
+        print(Global.shared.userProfile)
+        
+        distanceSlider.value = Global.shared.userProfile["maxDistance"] as! Float
+        distanceLabel.text = String(Int(distanceSlider.value)) + " mi"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -41,6 +49,26 @@ class SettingsTableViewController: UITableViewController {
         
         let delegate = UIApplication.shared.delegate as! AppDelegate
         delegate.window?.rootViewController = loginViewController
+    }
+    @IBAction func onDistanceChanged(_ sender: Any) {
+        distanceLabel.text = String(Int(distanceSlider.value)) + " mi"
+        Global.shared.userProfile["maxDistance"] = distanceSlider.value
+        
+        Global.shared.userProfile.saveInBackground { (success, error) in
+            if success {
+                //self.dismiss(animated: true, completion: nil)
+                print("saved!")
+            } else {
+                print("Error: \(error?.localizedDescription)")
+            }
+        }
+    }
+    
+    @IBAction func backToSettingsViewController(_ segue: UIStoryboardSegue) {
+    }
+    
+    @IBAction func emailChanged(_ segue: UIStoryboardSegue) {
+        emailLabel.text = PFUser.current()?.email
     }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

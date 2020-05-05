@@ -80,7 +80,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     func loadProfile() {
         //var profile = PFObject(className: "Profile")
         //print(Global.shared.userProfile)
-        self.nameLabel.text = (Global.shared.userProfile["name"] as! String) + ", 22"
+        var dob = Global.shared.userProfile["dob"] as! Date
+        self.nameLabel.text = (Global.shared.userProfile["name"] as! String) + ", " + String(dob.age)
         print(Global.shared.userProfile["dob"] as? String)
         self.signLabel.text = Global.shared.userProfile["sign"] as! String
         self.aboutMeField.text = Global.shared.userProfile["about"] as? String
@@ -156,7 +157,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func saveChanges() {
-        Global.shared.userProfile["about"] = self.aboutMeField.text
+        Global.shared.userProfile["about"] = aboutMeField.text
         Global.shared.userProfile["jobTitle"] = self.occupationField.text
         Global.shared.userProfile["companySchool"] = self.companySchoolField.text
         

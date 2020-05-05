@@ -563,10 +563,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.crop.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LNB-qI-MhC">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LNB-qI-MhC">
                                 <rect key="frame" x="107" y="118" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" image="YES"/>
                                 </accessibility>
@@ -624,7 +624,7 @@
         <scene sceneID="BlC-zy-6td">
             <objects>
                 <tableViewController id="blz-B8-Ygx" customClass="SettingsTableViewController" customModule="Juno" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ko8-uo-3mG">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="38" sectionFooterHeight="50" id="Ko8-uo-3mG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -668,6 +668,10 @@
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Nay-5m-v3p" appends="YES" id="rdz-sD-OYD"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ay8-r7-w7n">
                                         <rect key="frame" x="0.0" y="71.5" width="414" height="43.5"/>
@@ -709,12 +713,15 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="1" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="NG0-9p-iJE">
+                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="1" maxValue="2000" translatesAutoresizingMaskIntoConstraints="NO" id="NG0-9p-iJE">
                                                     <rect key="frame" x="18" y="40" width="378" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="onDistanceChanged:" destination="blz-B8-Ygx" eventType="valueChanged" id="8Wz-gm-3jw"/>
+                                                    </connections>
                                                 </slider>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20 mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVB-bl-c5h">
-                                                    <rect key="frame" x="352" y="11" width="43" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20 mi" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVB-bl-c5h">
+                                                    <rect key="frame" x="269" y="11" width="126" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -767,10 +774,75 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="distanceLabel" destination="vVB-bl-c5h" id="qHg-sv-59t"/>
+                        <outlet property="distanceSlider" destination="NG0-9p-iJE" id="MZq-2U-vz8"/>
+                        <outlet property="emailLabel" destination="2Cd-L9-Y5R" id="1kE-9r-NRf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M3F-gH-qi5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="HUf-ID-mZS" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="Nay-5m-v3p">
+                    <connections>
+                        <action selector="onChangeEmail:" destination="blz-B8-Ygx" id="fPs-13-6VF"/>
+                        <segue destination="NaV-xO-pHs" kind="presentation" id="xFX-sa-i5K"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1236.231884057971" y="1972.7678571428571"/>
+        </scene>
+        <!--Change Email View Controller-->
+        <scene sceneID="OWy-eB-IoR">
+            <objects>
+                <viewController id="oZu-gm-r2o" customClass="ChangeEmailViewController" customModule="Juno" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Ed-WB-ucV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrm-fO-5bO">
+                                <rect key="frame" x="49" y="56" width="97" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QzW-ex-rrj">
+                                <rect key="frame" x="46" y="97" width="323" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="username"/>
+                            </textField>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Saved." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJ6-68-en4">
+                                <rect key="frame" x="186" y="208" width="49" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="yLS-7G-zEs"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vKT-0y-Oji">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" image="chevron.left" catalog="system" id="QKk-KY-ZNh">
+                            <connections>
+                                <segue destination="HUf-ID-mZS" kind="unwind" unwindAction="emailChanged:" id="mjF-RF-he5"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="FWe-Ni-j56">
+                            <connections>
+                                <action selector="onDoneButton:" destination="oZu-gm-r2o" id="r4n-3A-wma"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="newEmailField" destination="QzW-ex-rrj" id="Ha7-Mf-HI8"/>
+                        <outlet property="savedLabel" destination="yJ6-68-en4" id="PF4-Ex-Fbr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oY1-R4-O5o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-181.15942028985509" y="2700.6696428571427"/>
         </scene>
         <!--LoginViewController-->
         <scene sceneID="B2z-5b-vXj">
@@ -876,7 +948,6 @@
         <!--Settings-->
         <scene sceneID="MJr-E5-qZO">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Y5-jz-zLr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController title="Settings" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="shE-t5-GlQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pit-P2-XEs">
@@ -888,12 +959,31 @@
                         <segue destination="blz-B8-Ygx" kind="relationship" relationship="rootViewController" id="HgB-tV-3ew"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Y5-jz-zLr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2146.376811594203" y="1972.7678571428571"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Rat-67-bnW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NaV-xO-pHs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qGd-Jg-03W">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oZu-gm-r2o" kind="relationship" relationship="rootViewController" id="gCa-R6-C8D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h7A-hc-YGH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1091.304347826087" y="2700.6696428571427"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="QfT-Mr-3jO"/>
+        <segue reference="rQG-F6-vBv"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark" catalog="system" width="128" height="114"/>
@@ -905,7 +995,6 @@
         <image name="message" catalog="system" width="128" height="113"/>
         <image name="message.fill" catalog="system" width="128" height="113"/>
         <image name="person" catalog="system" width="128" height="117"/>
-        <image name="person.crop.square" catalog="system" width="128" height="114"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="square.and.pencil" catalog="system" width="128" height="118"/>
         <image name="xmark" catalog="system" width="128" height="113"/>

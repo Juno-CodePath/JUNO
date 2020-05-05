@@ -57,7 +57,7 @@ class HomeViewController: UIViewController, KolodaViewDataSource, KolodaViewDele
         query.whereKey("owner", notContainedIn: Global.shared.userProfile!["dislikes"] as! [Any])
         query.whereKey("owner", notContainedIn: Global.shared.userProfile!["likes"] as! [Any])
         query.whereKey("objectId", doesNotMatchKey: "objectId", in: subquery)
-        
+        query.whereKey("location", nearGeoPoint: Global.shared.userProfile["location"] as! PFGeoPoint, withinMiles: Global.shared.userProfile["maxDistance"] as! Double)
         
         query.findObjectsInBackground { (profs, error) in
             if profs != nil {

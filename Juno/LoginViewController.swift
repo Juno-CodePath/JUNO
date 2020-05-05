@@ -66,35 +66,6 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func tempRegistration() {
-        
-        let profile = PFObject(className: "Profile")
-        profile["name"] = "Will"
-        profile["owner"] = PFUser.current()!
-        profile["dob"] = Date()
-        profile["likes"] = [String]()
-        profile["matches"] = [String]()
-        profile["sign"] = "Pisces"
-        //profile["profilePhoto"] = PFFileObject(data: nil)
-            
-            //profileImageView.image = UIImage(named: "will")
-            
-        /*let imageData = UIImage(named: "will")!.pngData()
-        let file = PFFileObject(name: "image.png", data: imageData!)
-            
-        profile["profilePhoto"] = file*/
-        print(PFUser.current())
-        profile["location"] = PFGeoPoint(latitude: 0, longitude: 0)
-        print("reached")
-        profile.saveInBackground { (success, error) in
-            if success {
-                //self.dismiss(animated: true, completion: nil)
-                print("saved!")
-            } else {
-                print("Error: \(error?.localizedDescription)")
-            }
-        }
-    }
     /*
     // MARK: - Navigation
 
