@@ -175,7 +175,8 @@ class RegistrationScreenController: UIViewController, UIImagePickerControllerDel
         profile["likes"] = Array<String>()
         profile["dislikes"] = Array<String>()
         profile["matches"] = 0
-        
+        profile["interest"] = "everyone"
+        profile["identity"] = "everyone"
         if imageView.image != nil {
             let imageData = imageView.image!.pngData()
             let file = PFFileObject(name:"image.png", data: imageData!)

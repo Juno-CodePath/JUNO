@@ -15,6 +15,7 @@ class HomeViewController: UIViewController, KolodaViewDataSource, KolodaViewDele
     @IBOutlet weak var kolodaView: KolodaView!
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var yesButton: UIButton!
+    @IBOutlet weak var moreButton: UIView!
     
     var count = 0
     var profiles = [PFObject]()
@@ -58,6 +59,10 @@ class HomeViewController: UIViewController, KolodaViewDataSource, KolodaViewDele
         query.whereKey("owner", notContainedIn: Global.shared.userProfile!["likes"] as! [Any])
         query.whereKey("objectId", doesNotMatchKey: "objectId", in: subquery)
         query.whereKey("location", nearGeoPoint: Global.shared.userProfile["location"] as! PFGeoPoint, withinMiles: Global.shared.userProfile["maxDistance"] as! Double)
+        query.whereKey("interest", containedIn: [Global.shared.userProfile["identity"] as! String, "everyone"])
+        if (Global.shared.userProfile["interest"] as! String != "everyone") {
+            query.whereKey("identity", equalTo: Global.shared.userProfile["interest"])
+        }
         
         query.findObjectsInBackground { (profs, error) in
             if profs != nil {
@@ -213,6 +218,23 @@ class HomeViewController: UIViewController, KolodaViewDataSource, KolodaViewDele
         
         yesButton.isEnabled = false
         noButton.isEnabled = false
+        moreButton.isHidden = true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        let cardView = Bundle.main.loadNibNamed("KolodaPhotoView", owner: self, options: nil)![0] as? KolodaPhotoView
+        
+        if segue.destination is MoreViewController
+        {
+            let vc = segue.destination as? MoreViewController
+            vc?.profile = profiles[kolodaView.currentCardIndex]
+            let location = profiles[kolodaView.currentCardIndex]["location"] as! PFGeoPoint
+            vc?.compatibility = zodiac.getCompatibility(first: Global.shared.userProfile["sign"] as! String, second: vc?.profile["sign"] as! String)
+            getAddress(location) { (address) in
+                vc?.locationField.text = address
+            }
+        }
     }
 
 }

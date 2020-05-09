@@ -13,20 +13,47 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var distanceSlider: UISlider!
     @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var interestSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var identitySegmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         emailLabel.text = PFUser.current()?.email
-        print(Global.shared.userProfile)
+        var distance = Global.shared.userProfile["maxDistance"] as! Float
+        distanceSlider.value = distance
+        distanceLabel.text = String(Int(distance)) + " mi"
         
         distanceSlider.value = Global.shared.userProfile["maxDistance"] as! Float
         distanceLabel.text = String(Int(distanceSlider.value)) + " mi"
+        identitySegmentedControl.selectedSegmentIndex = getGenderIndex(gender: Global.shared.userProfile["identity"] as! String)
+        interestSegmentedControl.selectedSegmentIndex = getGenderIndex(gender: Global.shared.userProfile["interest"] as! String)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    func getGenderIndex(gender: String) -> Int {
+        if (gender == "women") {
+            return 0
+        }
+        if (gender == "men") {
+            return 1
+        }
+        return 2
+    }
+    
+    func getGenderString(gender: Int) -> String {
+        if (gender == 0) {
+            return "women"
+        }
+        if (gender == 1) {
+            return "men"
+        }
+        return "everyone"
     }
 
     // MARK: - Table view data source
@@ -38,6 +65,9 @@ class SettingsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if (section == 1) {
+            return 3
+        }
         return 2
     }
 
@@ -54,6 +84,32 @@ class SettingsTableViewController: UITableViewController {
         distanceLabel.text = String(Int(distanceSlider.value)) + " mi"
         Global.shared.userProfile["maxDistance"] = distanceSlider.value
         
+        Global.shared.userProfile.saveInBackground { (success, error) in
+            if success {
+                //self.dismiss(animated: true, completion: nil)
+                print("saved!")
+            } else {
+                print("Error: \(error?.localizedDescription)")
+            }
+        }
+    }
+    @IBAction func onInterestChanged(_ sender: Any) {
+        let index = interestSegmentedControl.selectedSegmentIndex
+        Global.shared.userProfile["interest"] = getGenderString(gender: index)
+        Global.shared.userProfile.saveInBackground { (success, error) in
+            if success {
+                //self.dismiss(animated: true, completion: nil)
+                print("saved!")
+            } else {
+                print("Error: \(error?.localizedDescription)")
+            }
+        }
+        
+    }
+    
+    @IBAction func onIdentityChanged(_ sender: Any) {
+        let index = identitySegmentedControl.selectedSegmentIndex
+        Global.shared.userProfile["identity"] = getGenderString(gender: index)
         Global.shared.userProfile.saveInBackground { (success, error) in
             if success {
                 //self.dismiss(animated: true, completion: nil)

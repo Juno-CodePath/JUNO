@@ -101,6 +101,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let urlString = imageFile.url!
         let url = URL(string: urlString)!
         self.profileImageView.af_setImage(withURL: url)
+        
         /*query.findObjectsInBackground{(prof, error) in
             if prof != nil {
                 Global.shared.userProfile = prof![0]
