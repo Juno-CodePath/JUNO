@@ -8,7 +8,7 @@
 import UIKit
 import Parse
 
-class RegistrationScreenController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
+class RegistrationScreenController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var usernamefield: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -31,6 +31,19 @@ class RegistrationScreenController: UIViewController, UIImagePickerControllerDel
         
         manager.delegate = self
         
+        usernamefield.delegate = self
+        passwordField.delegate = self
+        nameField.delegate = self
+        dobField.delegate = self
+        
+        usernamefield.returnKeyType = UIReturnKeyType.done
+        passwordField.returnKeyType = UIReturnKeyType.done
+        nameField.returnKeyType = UIReturnKeyType.done
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object:nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object:nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object:nil)
+        
         let camTap = UITapGestureRecognizer(target: self, action:#selector(self.onTap))
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(camTap)
@@ -41,6 +54,38 @@ class RegistrationScreenController: UIViewController, UIImagePickerControllerDel
         view.addGestureRecognizer(tap)
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        hideKeyboard();
+        return true
+    }
+    
+    func hideKeyboard() {
+        usernamefield.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        nameField.resignFirstResponder()
+        dobField.resignFirstResponder()
+    }
+    
+    @objc func keyboardWillChange(notification: Notification) {
+        
+        guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        
+        if notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardWillChangeFrameNotification {
+            view.frame.origin.y = -keyboardRect.height + 100
+        } else {
+            view.frame.origin.y = 0
+        }
+    }
+    
     func showDatePicker(){
         //Formate Date
         datePicker.datePickerMode = .date
@@ -48,7 +93,7 @@ class RegistrationScreenController: UIViewController, UIImagePickerControllerDel
         //ToolBar
         let toolbar = UIToolbar();
         toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneDatePicker));
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
 
@@ -59,7 +104,7 @@ class RegistrationScreenController: UIViewController, UIImagePickerControllerDel
 
      }
 
-     @objc func donedatePicker(){
+     @objc func doneDatePicker(){
 
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd/yyyy"
@@ -90,18 +135,9 @@ class RegistrationScreenController: UIViewController, UIImagePickerControllerDel
         
         signupButton.isEnabled = false
         
-         let user = PFUser()
-         user.username = usernamefield.text
-         user.password = passwordField.text
-
-         user.signUpInBackground { (success, error) in
-             if success {
-                self.createProfile()
-                print("signup")
-             } else {
-                print("Error: \(String(describing: error?.localizedDescription))")
-             }
-         }
+        manager.requestWhenInUseAuthorization()
+        createUser()
+        
 //
 //        let username = usernamefield.text!
 //        let password = passwordField.text!
@@ -116,12 +152,25 @@ class RegistrationScreenController: UIViewController, UIImagePickerControllerDel
 //        }
     }
     
+    func createUser() {
+        let user = PFUser()
+        user.username = usernamefield.text
+        user.password = passwordField.text
+
+        user.signUpInBackground { (success, error) in
+            if success {
+               self.createProfile()
+               print("signup")
+            } else {
+               print("Error: \(String(describing: error?.localizedDescription))")
+            }
+        }
+    }
+    
     @objc func onTap(_ sender: Any) {
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.allowsEditing = true
-        
-        print("ytapped")
         
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
@@ -165,13 +214,12 @@ class RegistrationScreenController: UIViewController, UIImagePickerControllerDel
         
 //        let birthDate = DateFormatter().date(from: date)
         
-        manager.requestLocation()
+//        manager.requestLocation()
 //        print(date)
         profile["name"] = nameField.text
         profile["owner"] = PFUser.current()!
         profile["dob"] = date
         profile["sign"] = getZodiacSign(dob: date)
-//        print(getZodiacSign(dob: date))
         profile["likes"] = Array<String>()
         profile["dislikes"] = Array<String>()
         profile["matches"] = 0
@@ -190,7 +238,6 @@ class RegistrationScreenController: UIViewController, UIImagePickerControllerDel
                 
                 profile.saveInBackground { (success, error) in
                     if success {
-                        print("crwated")
                         self.getUserProfile()
                         self.performSegue(withIdentifier: "loginSegue", sender: nil)
                     } else {
@@ -227,11 +274,49 @@ class RegistrationScreenController: UIViewController, UIImagePickerControllerDel
         }
     }
     
+//    loc
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+//        if CLLocationManager.locationServicesEnabled() {
+//            switch CLLocationManager.authorizationStatus() {
+//                case .notDetermined, .restricted, .denied:
+//                    let alert = UIAlertController(title: "Enable Location Services", message: "Location authorization is required.", preferredStyle: .alert)
+//                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: {
+//                        action in alert.dismiss(animated: true, completion: nil)
+//                    }))
+//                    self.present(alert, animated: true, completion: nil)
+//                    signupButton.isEnabled = true
+//                case .authorizedAlways, .authorizedWhenInUse:
+//                    createUser()
+//                @unknown default:
+//                break
+//            }
+//            } else {
+//                print("Location services are not enabled")
+//        }
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        
+//        if CLLocationManager.locationServicesEnabled() {
+//            switch CLLocationManager.authorizationStatus() {
+//                case .notDetermined, .restricted, .denied:
+//                    let alert = UIAlertController(title: "Enable Location Services", message: "Location authorization is required.", preferredStyle: .alert)
+//                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: {
+//                        action in alert.dismiss(animated: true, completion: nil)
+//                    }))
+//                    self.present(alert, animated: true, completion: nil)
+//                    signupButton.isEnabled = true
+//                case .authorizedAlways, .authorizedWhenInUse:
+//                    createUser()
+//                @unknown default:
+//                break
+//            }
+//            } else {
+//                print("Location services are not enabled")
+//        }
     }
     
     /*

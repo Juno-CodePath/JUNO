@@ -37,13 +37,12 @@ class ChatTableViewController: UITableViewController, MessageInputBarDelegate {
         inputBar.sendButton.title = "Send"
         inputBar.delegate = self
         
-//        let indexPath = NSIndexPath(item: messages.count, section: 0)
-//        tableView.scrollToRow(at: indexPath as IndexPath, at: UITableView.ScrollPosition.bottom, animated: true)
-        
         tableView.keyboardDismissMode = .interactive
         
         let center = NotificationCenter.default
         center.addObserver(self, selector: #selector(keyboardWillBeHidden(note:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        center.addObserver(self, selector: #selector(keyboardWillChange(note:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        center.addObserver(self, selector: #selector(keyboardWillChange(note:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
 
     }
     
@@ -57,8 +56,10 @@ class ChatTableViewController: UITableViewController, MessageInputBarDelegate {
                 self.match = match![0]
                 self.messages = match![0]["messages"] as! Array<PFObject>
                 self.tableView.reloadData()
-                let indexPath = NSIndexPath(item: self.messages.count - 1, section: 0)
-                self.tableView.scrollToRow(at: indexPath as IndexPath, at: UITableView.ScrollPosition.bottom, animated: true)
+                if (self.messages.count > 1) {
+                    let indexPath = NSIndexPath(item: self.messages.count - 1, section: 0)
+                    self.tableView.scrollToRow(at: indexPath as IndexPath, at: UITableView.ScrollPosition.bottom, animated: true)
+                }
             } else {
                 print("not found")
             }
@@ -84,6 +85,20 @@ class ChatTableViewController: UITableViewController, MessageInputBarDelegate {
     @objc func keyboardWillBeHidden(note: Notification) {
         inputBar.inputTextView.text = nil
         becomeFirstResponder()
+        view.frame.origin.y = 0
+    }
+    
+    @objc func keyboardWillChange(note: Notification) {
+        
+        guard let keyboardRect = (note.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        
+        if note.name == UIResponder.keyboardWillShowNotification || note.name == UIResponder.keyboardWillChangeFrameNotification {
+            view.frame.origin.y = -keyboardRect.height
+        } else {
+            view.frame.origin.y = 0
+        }
     }
     
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
