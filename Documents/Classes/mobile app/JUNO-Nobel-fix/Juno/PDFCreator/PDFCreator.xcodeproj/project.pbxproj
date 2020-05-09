@@ -1,0 +1,538 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		016A687B245EB8E6009433D6 /* ImageStampAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A687A245EB8E6009433D6 /* ImageStampAnnotation.swift */; };
+		02480FA23DCD492230020087 /* Pods_PDFCreator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D187E90BA9C2424E500A161 /* Pods_PDFCreator.framework */; };
+		84073BDE23B720290079A486 /* PDFListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84073BDD23B720290079A486 /* PDFListVC.swift */; };
+		84073BE123B7238B0079A486 /* PDFListTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84073BE023B7238B0079A486 /* PDFListTVCell.swift */; };
+		84073BE423B77E6D0079A486 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84073BE323B77E6D0079A486 /* Extentions.swift */; };
+		84073BE723B7A6C30079A486 /* animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 84073BE623B7A6C30079A486 /* animation.json */; };
+		84073BE923B7C0FD0079A486 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 84073BE823B7C0FD0079A486 /* splash.json */; };
+		84073BEB23B7C2020079A486 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84073BEA23B7C2020079A486 /* SplashVC.swift */; };
+		84073BED23B7C6140079A486 /* logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 84073BEC23B7C6140079A486 /* logo.json */; };
+		8417EBE22400F0360067C09C /* SignatureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417EBE12400F0360067C09C /* SignatureVC.swift */; };
+		8461967F23FCEE1B008E5FDF /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461967E23FCEE1B008E5FDF /* RealmService.swift */; };
+		8461968223FCF5CA008E5FDF /* _LocalPDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461968123FCF5CA008E5FDF /* _LocalPDF.swift */; };
+		8461968423FD1C04008E5FDF /* PdfViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461968323FD1C04008E5FDF /* PdfViewVC.swift */; };
+		84A2D3B723B67E7400B836F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D3B623B67E7400B836F0 /* AppDelegate.swift */; };
+		84A2D3B923B67E7400B836F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D3B823B67E7400B836F0 /* SceneDelegate.swift */; };
+		84A2D3BE23B67E7400B836F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A2D3BC23B67E7400B836F0 /* Main.storyboard */; };
+		84A2D3C023B67E7500B836F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A2D3BF23B67E7500B836F0 /* Assets.xcassets */; };
+		84A2D3C323B67E7500B836F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A2D3C123B67E7500B836F0 /* LaunchScreen.storyboard */; };
+		84A2D3CE23B684D200B836F0 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D3CD23B684D200B836F0 /* MainVC.swift */; };
+		84A2D3D023B685D000B836F0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A2D3CF23B685D000B836F0 /* Default-568h@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		016A687A245EB8E6009433D6 /* ImageStampAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStampAnnotation.swift; sourceTree = "<group>"; };
+		1D187E90BA9C2424E500A161 /* Pods_PDFCreator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PDFCreator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27133D8EE47DD474E571A56F /* Pods-PDFCreator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDFCreator.debug.xcconfig"; path = "Target Support Files/Pods-PDFCreator/Pods-PDFCreator.debug.xcconfig"; sourceTree = "<group>"; };
+		682D06C204FDFE3CF2AD2151 /* Pods-PDFCreator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDFCreator.release.xcconfig"; path = "Target Support Files/Pods-PDFCreator/Pods-PDFCreator.release.xcconfig"; sourceTree = "<group>"; };
+		84073BDD23B720290079A486 /* PDFListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFListVC.swift; sourceTree = "<group>"; };
+		84073BE023B7238B0079A486 /* PDFListTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFListTVCell.swift; sourceTree = "<group>"; };
+		84073BE323B77E6D0079A486 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		84073BE623B7A6C30079A486 /* animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation.json; sourceTree = "<group>"; };
+		84073BE823B7C0FD0079A486 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
+		84073BEA23B7C2020079A486 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		84073BEC23B7C6140079A486 /* logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = logo.json; sourceTree = "<group>"; };
+		8417EBE12400F0360067C09C /* SignatureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureVC.swift; sourceTree = "<group>"; };
+		8461967E23FCEE1B008E5FDF /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		8461968123FCF5CA008E5FDF /* _LocalPDF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _LocalPDF.swift; sourceTree = "<group>"; };
+		8461968323FD1C04008E5FDF /* PdfViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewVC.swift; sourceTree = "<group>"; };
+		84A2D3B323B67E7400B836F0 /* PDFCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A2D3B623B67E7400B836F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84A2D3B823B67E7400B836F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		84A2D3BD23B67E7400B836F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84A2D3BF23B67E7500B836F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84A2D3C223B67E7500B836F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84A2D3C423B67E7500B836F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84A2D3CD23B684D200B836F0 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		84A2D3CF23B685D000B836F0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84A2D3B023B67E7400B836F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02480FA23DCD492230020087 /* Pods_PDFCreator.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		016A6879245EB8D5009433D6 /* CustomClasses */ = {
+			isa = PBXGroup;
+			children = (
+				016A687A245EB8E6009433D6 /* ImageStampAnnotation.swift */,
+			);
+			path = CustomClasses;
+			sourceTree = "<group>";
+		};
+		84073BDF23B7236A0079A486 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				84073BE023B7238B0079A486 /* PDFListTVCell.swift */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+		84073BE223B77E490079A486 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				84073BE323B77E6D0079A486 /* Extentions.swift */,
+				8461967E23FCEE1B008E5FDF /* RealmService.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		84073BE523B7A6B50079A486 /* LottieJSON */ = {
+			isa = PBXGroup;
+			children = (
+				84073BEC23B7C6140079A486 /* logo.json */,
+				84073BE823B7C0FD0079A486 /* splash.json */,
+				84073BE623B7A6C30079A486 /* animation.json */,
+			);
+			path = LottieJSON;
+			sourceTree = "<group>";
+		};
+		8461968023FCF5AB008E5FDF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8461968123FCF5CA008E5FDF /* _LocalPDF.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84A2D3AA23B67E7400B836F0 = {
+			isa = PBXGroup;
+			children = (
+				84A2D3CF23B685D000B836F0 /* Default-568h@2x.png */,
+				84A2D3B523B67E7400B836F0 /* PDFCreator */,
+				84A2D3B423B67E7400B836F0 /* Products */,
+				86FF805AB9E522EACDE6571A /* Pods */,
+				9D4619DF7CFC7C67DEBD9922 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		84A2D3B423B67E7400B836F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84A2D3B323B67E7400B836F0 /* PDFCreator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84A2D3B523B67E7400B836F0 /* PDFCreator */ = {
+			isa = PBXGroup;
+			children = (
+				016A6879245EB8D5009433D6 /* CustomClasses */,
+				8461968023FCF5AB008E5FDF /* Model */,
+				84073BE523B7A6B50079A486 /* LottieJSON */,
+				84073BE223B77E490079A486 /* Utility */,
+				84073BDF23B7236A0079A486 /* TableCells */,
+				84A2D3CC23B67EC000B836F0 /* StoryBoards */,
+				84A2D3CB23B67E9A00B836F0 /* SupportingFiles */,
+				84A2D3CA23B67E8700B836F0 /* VIewController */,
+			);
+			path = PDFCreator;
+			sourceTree = "<group>";
+		};
+		84A2D3CA23B67E8700B836F0 /* VIewController */ = {
+			isa = PBXGroup;
+			children = (
+				84A2D3CD23B684D200B836F0 /* MainVC.swift */,
+				84073BDD23B720290079A486 /* PDFListVC.swift */,
+				84073BEA23B7C2020079A486 /* SplashVC.swift */,
+				8461968323FD1C04008E5FDF /* PdfViewVC.swift */,
+				8417EBE12400F0360067C09C /* SignatureVC.swift */,
+			);
+			path = VIewController;
+			sourceTree = "<group>";
+		};
+		84A2D3CB23B67E9A00B836F0 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				84A2D3C423B67E7500B836F0 /* Info.plist */,
+				84A2D3BF23B67E7500B836F0 /* Assets.xcassets */,
+				84A2D3B823B67E7400B836F0 /* SceneDelegate.swift */,
+				84A2D3B623B67E7400B836F0 /* AppDelegate.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		84A2D3CC23B67EC000B836F0 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				84A2D3C123B67E7500B836F0 /* LaunchScreen.storyboard */,
+				84A2D3BC23B67E7400B836F0 /* Main.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		86FF805AB9E522EACDE6571A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				27133D8EE47DD474E571A56F /* Pods-PDFCreator.debug.xcconfig */,
+				682D06C204FDFE3CF2AD2151 /* Pods-PDFCreator.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9D4619DF7CFC7C67DEBD9922 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D187E90BA9C2424E500A161 /* Pods_PDFCreator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84A2D3B223B67E7400B836F0 /* PDFCreator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84A2D3C723B67E7500B836F0 /* Build configuration list for PBXNativeTarget "PDFCreator" */;
+			buildPhases = (
+				C58C49A6FDF69B819EE0AA52 /* [CP] Check Pods Manifest.lock */,
+				84A2D3AF23B67E7400B836F0 /* Sources */,
+				84A2D3B023B67E7400B836F0 /* Frameworks */,
+				84A2D3B123B67E7400B836F0 /* Resources */,
+				7B918222C489631FE0A8AC46 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PDFCreator;
+			productName = PDFCreator;
+			productReference = 84A2D3B323B67E7400B836F0 /* PDFCreator.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84A2D3AB23B67E7400B836F0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Lahiru Chathuranga";
+				TargetAttributes = {
+					84A2D3B223B67E7400B836F0 = {
+						CreatedOnToolsVersion = 11.2;
+					};
+				};
+			};
+			buildConfigurationList = 84A2D3AE23B67E7400B836F0 /* Build configuration list for PBXProject "PDFCreator" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84A2D3AA23B67E7400B836F0;
+			productRefGroup = 84A2D3B423B67E7400B836F0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84A2D3B223B67E7400B836F0 /* PDFCreator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84A2D3B123B67E7400B836F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84073BE923B7C0FD0079A486 /* splash.json in Resources */,
+				84A2D3C323B67E7500B836F0 /* LaunchScreen.storyboard in Resources */,
+				84073BE723B7A6C30079A486 /* animation.json in Resources */,
+				84A2D3D023B685D000B836F0 /* Default-568h@2x.png in Resources */,
+				84A2D3C023B67E7500B836F0 /* Assets.xcassets in Resources */,
+				84A2D3BE23B67E7400B836F0 /* Main.storyboard in Resources */,
+				84073BED23B7C6140079A486 /* logo.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7B918222C489631FE0A8AC46 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PDFCreator/Pods-PDFCreator-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PDFCreator/Pods-PDFCreator-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PDFCreator/Pods-PDFCreator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C58C49A6FDF69B819EE0AA52 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PDFCreator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84A2D3AF23B67E7400B836F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				016A687B245EB8E6009433D6 /* ImageStampAnnotation.swift in Sources */,
+				8461968223FCF5CA008E5FDF /* _LocalPDF.swift in Sources */,
+				84A2D3B723B67E7400B836F0 /* AppDelegate.swift in Sources */,
+				84073BE123B7238B0079A486 /* PDFListTVCell.swift in Sources */,
+				84073BE423B77E6D0079A486 /* Extentions.swift in Sources */,
+				84073BDE23B720290079A486 /* PDFListVC.swift in Sources */,
+				84A2D3CE23B684D200B836F0 /* MainVC.swift in Sources */,
+				8461968423FD1C04008E5FDF /* PdfViewVC.swift in Sources */,
+				84A2D3B923B67E7400B836F0 /* SceneDelegate.swift in Sources */,
+				84073BEB23B7C2020079A486 /* SplashVC.swift in Sources */,
+				8417EBE22400F0360067C09C /* SignatureVC.swift in Sources */,
+				8461967F23FCEE1B008E5FDF /* RealmService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		84A2D3BC23B67E7400B836F0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84A2D3BD23B67E7400B836F0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84A2D3C123B67E7500B836F0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84A2D3C223B67E7500B836F0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84A2D3C523B67E7500B836F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				"INFOPLIST_FILE[sdk=*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84A2D3C623B67E7500B836F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				"INFOPLIST_FILE[sdk=*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84A2D3C823B67E7500B836F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27133D8EE47DD474E571A56F /* Pods-PDFCreator.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BKD4DD3U6Y;
+				INFOPLIST_FILE = PDFCreator/Info.plist;
+				"INFOPLIST_FILE[sdk=*]" = PDFCreator/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.em.PDFCreator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84A2D3C923B67E7500B836F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682D06C204FDFE3CF2AD2151 /* Pods-PDFCreator.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BKD4DD3U6Y;
+				INFOPLIST_FILE = PDFCreator/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.em.PDFCreator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84A2D3AE23B67E7400B836F0 /* Build configuration list for PBXProject "PDFCreator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84A2D3C523B67E7500B836F0 /* Debug */,
+				84A2D3C623B67E7500B836F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84A2D3C723B67E7500B836F0 /* Build configuration list for PBXNativeTarget "PDFCreator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84A2D3C823B67E7500B836F0 /* Debug */,
+				84A2D3C923B67E7500B836F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84A2D3AB23B67E7400B836F0 /* Project object */;
+}
