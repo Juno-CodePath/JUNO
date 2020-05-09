@@ -47,7 +47,7 @@ class HomeViewController: UIViewController, KolodaViewDataSource, KolodaViewDele
         numberofProfile = numberofProfile + 20
         
         let query = PFQuery(className: "Profile")
-        query.includeKeys(["owner", "likes", "dislikes", "matches"])
+        query.includeKeys(["owner", "likes", "dislikes"])
         query.limit = numberofProfile
         
         let subquery = PFQuery(className: "Profile")
@@ -107,6 +107,9 @@ class HomeViewController: UIViewController, KolodaViewDataSource, KolodaViewDele
         
         Global.shared.userProfile.add(likedUser.objectId, forKey: "dislikes")
         Global.shared.userProfile.saveInBackground()
+        
+        self.noButton.isEnabled = true
+        self.yesButton.isEnabled = true
     }
     
     func swipeRight(_ index: Int) {
@@ -146,7 +149,10 @@ class HomeViewController: UIViewController, KolodaViewDataSource, KolodaViewDele
             }
         }
         
-        Global.shared.userProfile.saveInBackground ()
+        Global.shared.userProfile.saveInBackground()
+        
+        self.noButton.isEnabled = true
+        self.yesButton.isEnabled = true
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
