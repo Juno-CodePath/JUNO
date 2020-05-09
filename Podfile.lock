@@ -1,34 +1,36 @@
 PODS:
-  - Alamofire (4.9.1)
-  - AlamofireImage (3.6.0):
-    - Alamofire (~> 4.9)
-  - Bolts/Tasks (1.9.0)
-  - Parse (1.17.3):
-    - Parse/Core (= 1.17.3)
-  - Parse/Core (1.17.3):
-    - Bolts/Tasks (~> 1.9)
-  - SwiftLocation (4.2.0)
+  - Alamofire (5.0.5)
+  - AlamofireImage (4.0.3):
+    - Alamofire (< 6.0.0, >= 5.0.2)
+  - Bolts/Tasks (1.9.1)
+  - MessageInputBar (0.4.1):
+    - MessageInputBar/Core (= 0.4.1)
+  - MessageInputBar/Core (0.4.1)
+  - Parse (1.18.0):
+    - Parse/Core (= 1.18.0)
+  - Parse/Core (1.18.0):
+    - Bolts/Tasks (= 1.9.1)
 
 DEPENDENCIES:
   - AlamofireImage
+  - MessageInputBar
   - Parse
-  - SwiftLocation (~> 4.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireImage
     - Bolts
+    - MessageInputBar
     - Parse
-    - SwiftLocation
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
-  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
-  Parse: c1ad2a04d2cab2b54b6fb7da05f741abf2cf57d1
-  SwiftLocation: 609ac8859f2c5d48a6cadd2a58c63b1dae02dc25
+  Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  AlamofireImage: 3d1a2010519e58675318735580eb856e88840ff7
+  Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
+  MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
+  Parse: 79bdda34fdb7eb2a707a43a951c8aae236cb3e34
 
-PODFILE CHECKSUM: cecebd214b0e133c0f69285c88d8e40ec75d69fc
+PODFILE CHECKSUM: eea38f4d44d55a9ac5edf7df5476da275bf2a1fe
 
-COCOAPODS: 1.9.0
+COCOAPODS: 1.8.4
