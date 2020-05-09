@@ -1,5 +1,7 @@
 # JUNO
 
+[Narrated Walkthrough](https://youtu.be/1S7fkVNST7g)
+
 ## Table of Contents
 1. [Overview](#Overview)
 2. [Product Spec](#Product-Spec)
