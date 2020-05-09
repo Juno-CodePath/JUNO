@@ -12,4 +12,5 @@ import Parse
 class Global {
     static let shared = Global()
     var userProfile: PFObject!
+    
 }

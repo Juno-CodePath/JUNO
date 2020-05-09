@@ -10,6 +10,7 @@ import UIKit
 import AlamofireImage
 import Parse
 
+
 class LoginViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     
@@ -26,7 +27,8 @@ class LoginViewController: UIViewController {
         
         PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
             if user != nil {
-                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                self.getUserProfile()
+//                self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
                 print("Error: \(error?.localizedDescription)")
             }
@@ -45,38 +47,25 @@ class LoginViewController: UIViewController {
                 print("Error: \(error?.localizedDescription)")
             }
         }
-        tempRegistration()
+        //tempRegistration()
     }
     
-    func tempRegistration() {
+    func getUserProfile() {
         
-        let profile = PFObject(className: "Profile")
-        profile["name"] = "Will"
-        profile["owner"] = PFUser.current()!
-        profile["dob"] = Date()
-        profile["likes"] = [String]()
-        profile["matches"] = [String]()
-        profile["sign"] = "Pisces"
-        //profile["profilePhoto"] = PFFileObject(data: nil)
-            
-            //profileImageView.image = UIImage(named: "will")
-            
-        /*let imageData = UIImage(named: "will")!.pngData()
-        let file = PFFileObject(name: "image.png", data: imageData!)
-            
-        profile["profilePhoto"] = file*/
-        print(PFUser.current())
-        profile["location"] = PFGeoPoint(latitude: 0, longitude: 0)
-        print("reached")
-        profile.saveInBackground { (success, error) in
-            if success {
-                //self.dismiss(animated: true, completion: nil)
-                print("saved!")
+        let user = PFUser.current()
+        let query = PFQuery(className: "Profile")
+        query.includeKey("owner")
+        
+        query.whereKey("owner", equalTo: user).findObjectsInBackground{(prof, error) in
+            if prof != nil {
+                Global.shared.userProfile = prof![0]
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
-                print("Error: \(error?.localizedDescription)")
+                print("no posts")
             }
         }
     }
+    
     /*
     // MARK: - Navigation
 

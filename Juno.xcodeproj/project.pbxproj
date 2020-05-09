@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14408DD82460FC3F00890CBF /* ChangeEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14408DD72460FC3F00890CBF /* ChangeEmailViewController.swift */; };
 		149D9C2E244564400004F77F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D9C2D244564400004F77F /* ProfileViewController.swift */; };
-		149D9C302446551D0004F77F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D9C2F2446551D0004F77F /* SettingsViewController.swift */; };
 		149D9C32244674C00004F77F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D9C31244674C00004F77F /* LoginViewController.swift */; };
+		14AE9F34244E7A42002F268B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE9F33244E7A42002F268B /* SettingsTableViewController.swift */; };
+		14B2B61424666C800069F1DF /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B2B61324666C800069F1DF /* MoreViewController.swift */; };
 		687FF911D3F2DEA22D350C11 /* Pods_Juno_JunoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8372FCE47A722675EEFF5677 /* Pods_Juno_JunoUITests.framework */; };
 		96E1161C78B25614BC19C038 /* Pods_JunoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A0BD24A11BB0CADC12B3BF /* Pods_JunoTests.framework */; };
 		AE0140452447F0EA0043B802 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0140442447F0EA0043B802 /* Global.swift */; };
@@ -49,9 +51,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14408DD72460FC3F00890CBF /* ChangeEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewController.swift; sourceTree = "<group>"; };
 		149D9C2D244564400004F77F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		149D9C2F2446551D0004F77F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		149D9C31244674C00004F77F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		14AE9F33244E7A42002F268B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		14B2B61224662E0E0069F1DF /* Juno.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Juno.entitlements; sourceTree = "<group>"; };
+		14B2B61324666C800069F1DF /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		1E47DD90AC83BBC6369A9705 /* Pods-Juno.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Juno.release.xcconfig"; path = "Target Support Files/Pods-Juno/Pods-Juno.release.xcconfig"; sourceTree = "<group>"; };
 		24BFFB04CABE8D8608F8D666 /* Pods-JunoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JunoTests.release.xcconfig"; path = "Target Support Files/Pods-JunoTests/Pods-JunoTests.release.xcconfig"; sourceTree = "<group>"; };
 		33AA073D0ABD0D8A020A1DF9 /* Pods-Juno.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Juno.debug.xcconfig"; path = "Target Support Files/Pods-Juno/Pods-Juno.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +153,7 @@
 		AEAC24122445466F0071791A /* Juno */ = {
 			isa = PBXGroup;
 			children = (
+				14B2B61224662E0E0069F1DF /* Juno.entitlements */,
 				AEAC24132445466F0071791A /* AppDelegate.swift */,
 				AEAC24192445466F0071791A /* Main.storyboard */,
 				AEAC241C244546710071791A /* Assets.xcassets */,
@@ -155,7 +161,6 @@
 				AEAC2421244546710071791A /* Info.plist */,
 				AE7ECC49244C47A0001E04CD /* HomeViewController.swift */,
 				149D9C2D244564400004F77F /* ProfileViewController.swift */,
-				149D9C2F2446551D0004F77F /* SettingsViewController.swift */,
 				149D9C31244674C00004F77F /* LoginViewController.swift */,
 				AE0140442447F0EA0043B802 /* Global.swift */,
 				AEAC24452446CA9E0071791A /* Zodiac.swift */,
@@ -166,6 +171,9 @@
 				AE01404E24481C2D0043B802 /* MatchCell.swift */,
 				AE7ECC4B244C6574001E04CD /* KolodaPhotoView.swift */,
 				AE7ECC4D244C67AC001E04CD /* KolodaPhotoView.xib */,
+				14AE9F33244E7A42002F268B /* SettingsTableViewController.swift */,
+				14408DD72460FC3F00890CBF /* ChangeEmailViewController.swift */,
+				14B2B61324666C800069F1DF /* MoreViewController.swift */,
 			);
 			path = Juno;
 			sourceTree = "<group>";
@@ -441,7 +449,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14B2B61424666C800069F1DF /* MoreViewController.swift in Sources */,
 				149D9C2E244564400004F77F /* ProfileViewController.swift in Sources */,
+				14408DD82460FC3F00890CBF /* ChangeEmailViewController.swift in Sources */,
+				14AE9F34244E7A42002F268B /* SettingsTableViewController.swift in Sources */,
 				AE7ECC4C244C6574001E04CD /* KolodaPhotoView.swift in Sources */,
 				AEC80E9024470443009AA8BA /* RegistrationScreenController.swift in Sources */,
 				AE01404D24481C1E0043B802 /* ChatCell.swift in Sources */,
@@ -450,7 +461,6 @@
 				AE01404B24481B950043B802 /* MatchesTableViewController.swift in Sources */,
 				AE01404924481A2E0043B802 /* ChatTableViewController.swift in Sources */,
 				149D9C32244674C00004F77F /* LoginViewController.swift in Sources */,
-				149D9C302446551D0004F77F /* SettingsViewController.swift in Sources */,
 				AE0140452447F0EA0043B802 /* Global.swift in Sources */,
 				AE7ECC4A244C47A0001E04CD /* HomeViewController.swift in Sources */,
 				AEAC24462446CA9E0071791A /* Zodiac.swift in Sources */,
@@ -627,16 +637,19 @@
 			baseConfigurationReference = 33AA073D0ABD0D8A020A1DF9 /* Pods-Juno.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Juno/Juno.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7A2HRJ39PG;
+				DEVELOPMENT_TEAM = 347L45YBGH;
 				INFOPLIST_FILE = Juno/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Cmp.Juno;
+				PRODUCT_BUNDLE_IDENTIFIER = Cmp.JunoCodepath;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -647,16 +660,19 @@
 			baseConfigurationReference = 1E47DD90AC83BBC6369A9705 /* Pods-Juno.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Juno/Juno.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7A2HRJ39PG;
+				DEVELOPMENT_TEAM = 347L45YBGH;
 				INFOPLIST_FILE = Juno/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Cmp.Juno;
+				PRODUCT_BUNDLE_IDENTIFIER = Cmp.JunoCodepath;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
